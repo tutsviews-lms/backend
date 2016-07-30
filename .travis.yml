@@ -5,7 +5,7 @@ addons:
   apt:
     packages:
     - oracle-java8-installer
-install
+install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 before_install:
   - chmod +x mvnw

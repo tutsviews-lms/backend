@@ -5,10 +5,6 @@ addons:
   apt:
     packages:
     - oracle-java8-installer
-install:
-  - mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-before_install:
-  - chmod +x mvnw
 deploy:
   provider: heroku
   api_key:

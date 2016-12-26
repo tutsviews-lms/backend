@@ -11,19 +11,19 @@ import tutsviews.lms.repository.AuthorRepository;
 
 @Repository
 public class AuthorRepositoryImpl {
-	
-	@Autowired
-	AuthorRepository authorRepository;
-	
-	public List<Author> getAll(){
-		return authorRepository.findAll();
-	}
-	
-	
-	public Author getOne(Long id){
-		return authorRepository.findOne(id);
-	}
-	
+//	
+//	@Autowired
+//	AuthorRepository authorRepository;
+//	
+//	public List<Author> getAll(){
+//		return authorRepository.findAll();
+//	}
+//	
+//	
+//	public Author getOne(Long id){
+//		return authorRepository.findOne(id);
+//	}
+//	
 	
 	
 	

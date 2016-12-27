@@ -8,10 +8,10 @@ import tutsviews.lms.domain.Author;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long>{
 
-//	 Author findAuthorByEmail(String email);
-//	
+	 Author findAuthorByEmail(String email);
+	
 //	 Author findAuthorByFirstNameContainingOrLastNameContainingOrEmailEquals(String valeur);
-//	 
+	 
 	 
 	 
 	

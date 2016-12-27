@@ -1,4 +1,4 @@
-package tutsviews.lms.domain;
+package tutsviews.lms.domain.course;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package tutsviews.lms.domain;
+package tutsviews.lms.domain.course;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -9,6 +9,11 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import tutsviews.lms.domain.AbstractEntity;
+import tutsviews.lms.domain.media.Audio;
+import tutsviews.lms.domain.media.Image;
+import tutsviews.lms.domain.media.Text;
+import tutsviews.lms.domain.media.Video;
 import tutsviews.lms.domain.util.ContentType;
 
 @Entity

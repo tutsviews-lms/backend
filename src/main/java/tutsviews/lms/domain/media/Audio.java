@@ -1,4 +1,4 @@
-package tutsviews.lms.domain;
+package tutsviews.lms.domain.media;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -6,26 +6,26 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import tutsviews.lms.domain.AbstractEntity;
+import tutsviews.lms.domain.course.Content;
 
-@Entity
 @Data
-public class Video extends AbstractEntity {
-
+@Entity
+public class Audio extends AbstractEntity {
 	
 	@NotNull
-	private String nameVideo;
+	private String nameAudio;
 	
 	@NotNull
-	private String urlVideo;
+	private String urlAudio;
 	
 	@NotNull
-	private String uriVideo;
+	private String uriAudio;
 	
 	@NotNull
-	private int lengthVideo;
+	private int lengthAudio;
 	
 	@OneToOne(cascade = { CascadeType. ALL })
 	private Content content;
-	
-	
+
 }

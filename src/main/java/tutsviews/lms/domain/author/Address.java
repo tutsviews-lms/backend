@@ -1,4 +1,4 @@
-package tutsviews.lms.domain;
+package tutsviews.lms.domain.author;
 
 import javax.persistence.Access;
 import javax.persistence.AccessType;

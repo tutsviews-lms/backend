@@ -1,4 +1,4 @@
-package tutsviews.lms.domain;
+package tutsviews.lms.domain.course;
 
 import java.util.List;
 
@@ -9,6 +9,7 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import tutsviews.lms.domain.AbstractEntity;
 
 @Entity
 @Data

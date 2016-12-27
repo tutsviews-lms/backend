@@ -1,4 +1,4 @@
-package tutsviews.lms.domain;
+package tutsviews.lms.domain.course;
 
 import java.util.List;
 
@@ -10,6 +10,9 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import lombok.Data;
+import tutsviews.lms.domain.AbstractEntity;
+import tutsviews.lms.domain.author.Author;
+import tutsviews.lms.domain.media.Image;
 
 @Entity
 @Data

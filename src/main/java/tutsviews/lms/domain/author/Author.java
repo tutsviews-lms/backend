@@ -1,4 +1,4 @@
-package tutsviews.lms.domain;
+package tutsviews.lms.domain.author;
 
 import java.util.List;
 
@@ -13,6 +13,9 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Email;
 
 import lombok.Data;
+import tutsviews.lms.domain.AbstractEntity;
+import tutsviews.lms.domain.course.Course;
+import tutsviews.lms.domain.media.Image;
 
 @Data
 @Entity

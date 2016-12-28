@@ -17,6 +17,10 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
 	/**
 	 * For DSL we use get/find/counts/read
 	 **/
+	
+	 Long deleteByEmail(String email);
+	 Long countByEmail(String email);
+	 
 
 	// By FieldName //IS EQUAL NOT
 

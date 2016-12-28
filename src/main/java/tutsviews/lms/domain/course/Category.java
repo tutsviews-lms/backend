@@ -1,15 +1,13 @@
 package tutsviews.lms.domain.course;
 
-import javax.persistence.CascadeType;
+import javax.persistence.CascadeType; 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import lombok.Data;
 
-@Data
 @Entity
 public class Category {
 
@@ -21,5 +19,36 @@ public class Category {
 	
 	@ManyToOne(cascade = { CascadeType. ALL })
 	private Course course;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNameCategory() {
+		return nameCategory;
+	}
+
+	public void setNameCategory(String nameCategory) {
+		this.nameCategory = nameCategory;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	public Category() {
+		super();
+	}
+	
+	
+	
 }
 

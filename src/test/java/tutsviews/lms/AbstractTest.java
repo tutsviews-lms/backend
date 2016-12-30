@@ -21,4 +21,7 @@ public abstract class AbstractTest {
 
 	protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
+	
+	
+	
 }

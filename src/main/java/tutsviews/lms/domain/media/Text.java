@@ -11,28 +11,37 @@ public class Text extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
-	private Text htmlText;  
+	private String htmlText;  
 	
 	@NotNull
-	private Text simpleText;
+	private String simpleText;
 	
 
-
-	public Text getHtmlText() {
+	public String getHtmlText() {
 		return htmlText;
 	}
 
-	public void setHtmlText(Text htmlText) {
+
+
+
+	public void setHtmlText(String htmlText) {
 		this.htmlText = htmlText;
 	}
 
-	public Text getSimpleText() {
+
+
+
+	public String getSimpleText() {
 		return simpleText;
 	}
 
-	public void setSimpleText(Text simpleText) {
+
+
+
+	public void setSimpleText(String simpleText) {
 		this.simpleText = simpleText;
 	}
+
 
 
 

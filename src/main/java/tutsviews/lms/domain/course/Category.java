@@ -1,11 +1,16 @@
 package tutsviews.lms.domain.course;
 
-import javax.persistence.CascadeType; 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -17,9 +22,11 @@ public class Category {
 	
 	private String nameCategory;
 	
-	@ManyToOne(cascade = { CascadeType. ALL })
-	private Course course;
-
+	@JsonIgnore
+	@JoinTable(name="course_category")
+	@ManyToMany(cascade = { CascadeType. ALL })
+	private List<Course> Courses;
+	
 	public long getId() {
 		return id;
 	}
@@ -35,13 +42,14 @@ public class Category {
 	public void setNameCategory(String nameCategory) {
 		this.nameCategory = nameCategory;
 	}
+	
 
-	public Course getCourse() {
-		return course;
+	public List<Course> getCourses() {
+		return Courses;
 	}
 
-	public void setCourse(Course course) {
-		this.course = course;
+	public void setCourses(List<Course> courses) {
+		Courses = courses;
 	}
 
 	public Category() {

@@ -22,7 +22,7 @@ public class Pricing extends AbstractEntity {
 	@Enumerated(EnumType.STRING)
 	private TypeRecuring typeRecuring;
 	
-	@OneToOne(orphanRemoval = true, cascade = { CascadeType. ALL })
+	@OneToOne(cascade = { CascadeType. ALL })
 	private Course course;
 
 	public float getPrice() {

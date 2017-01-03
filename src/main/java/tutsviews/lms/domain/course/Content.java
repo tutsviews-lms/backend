@@ -1,12 +1,14 @@
 package tutsviews.lms.domain.course;
 
-import javax.persistence.CascadeType; 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import tutsviews.lms.domain.media.Audio;
 import tutsviews.lms.domain.media.Image;
@@ -26,19 +28,20 @@ public class Content extends AbstractEntity {
 	@Enumerated(EnumType.STRING)
 	private ContentType contentType;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@JsonIgnore
+	@ManyToOne( cascade = { CascadeType.ALL })
 	private Lecture lecture;
 	
 	@NotNull
 	private int orderContent;
 	
-	@OneToOne(cascade = { CascadeType.ALL })
+	@OneToOne(cascade = { CascadeType. ALL })
 	private Image image;
 	
-	@OneToOne(cascade = { CascadeType.ALL })
+	@OneToOne(cascade = { CascadeType. ALL })
 	private Video video;
 	
-	@OneToOne(cascade = { CascadeType.ALL })
+	@OneToOne(cascade = { CascadeType. ALL })
 	private Audio audio;
 	
 	

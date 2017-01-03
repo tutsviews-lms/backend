@@ -1,11 +1,8 @@
 package tutsviews.lms.domain.media;
 
-import javax.persistence.CascadeType; 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-import tutsviews.lms.domain.course.Content;
 import tutsviews.lms.domain.util.AbstractEntity;
 
 @Entity
@@ -25,8 +22,6 @@ public class Video extends AbstractEntity {
 	@NotNull
 	private int lengthVideo;
 	
-	@OneToOne(cascade = { CascadeType. ALL })
-	private Content content;
 
 	public String getNameVideo() {
 		return nameVideo;
@@ -60,13 +55,6 @@ public class Video extends AbstractEntity {
 		this.lengthVideo = lengthVideo;
 	}
 
-	public Content getContent() {
-		return content;
-	}
-
-	public void setContent(Content content) {
-		this.content = content;
-	}
 
 	public Video() {
 

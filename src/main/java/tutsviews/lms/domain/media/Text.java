@@ -1,10 +1,8 @@
 package tutsviews.lms.domain.media;
 
-import javax.persistence.Entity; 
-import javax.persistence.OneToOne;
+import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 
-import tutsviews.lms.domain.course.Content;
 import tutsviews.lms.domain.util.AbstractEntity;
 
 @Entity
@@ -18,8 +16,7 @@ public class Text extends AbstractEntity {
 	@NotNull
 	private Text simpleText;
 	
-	@OneToOne
-	private Content content;
+
 
 	public Text getHtmlText() {
 		return htmlText;
@@ -37,13 +34,7 @@ public class Text extends AbstractEntity {
 		this.simpleText = simpleText;
 	}
 
-	public Content getContent() {
-		return content;
-	}
 
-	public void setContent(Content content) {
-		this.content = content;
-	}
 
 	public Text() {
 		super();

@@ -1,9 +1,11 @@
 package tutsviews.lms.domain.course;
 
-import java.util.List; 
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -26,7 +28,8 @@ public class Course extends AbstractEntity {
 	@NotNull
 	private String titleCourse;
 	
-	@OneToMany(orphanRemoval = true, cascade = { CascadeType. ALL },mappedBy = "course")
+	@JoinTable(name="course_category")
+	@ManyToMany(cascade = { CascadeType. ALL })
 	private List<Category> categories;
 	
 	@JsonIgnore
@@ -41,11 +44,9 @@ public class Course extends AbstractEntity {
 	@OneToOne(cascade = { CascadeType. ALL })
 	private Image image;
 	
-	@OneToMany(orphanRemoval = true, cascade = { CascadeType. ALL },mappedBy = "course")
+	@OneToMany(cascade = { CascadeType. ALL },mappedBy = "id")
 	private List<Section> sections;
 	
-	@OneToOne(cascade = { CascadeType. ALL })
-	private Pricing pricing;
 
 	public String getNameCourse() {
 		return nameCourse;
@@ -111,13 +112,7 @@ public class Course extends AbstractEntity {
 		this.sections = sections;
 	}
 
-	public Pricing getPricing() {
-		return pricing;
-	}
 
-	public void setPricing(Pricing pricing) {
-		this.pricing = pricing;
-	}
 
 	public Course() {
 		super();

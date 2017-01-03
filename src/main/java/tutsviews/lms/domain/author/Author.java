@@ -46,10 +46,10 @@ public class Author extends AbstractEntity {
 	@NotNull
 	private String tel;
 
-	@OneToMany(orphanRemoval = true, cascade = { CascadeType.ALL },mappedBy = "author")
+	@OneToMany(orphanRemoval = true, cascade = { CascadeType.ALL },mappedBy = "id")
 	private List<Course> courses;
 
-	@OneToOne(orphanRemoval = true, cascade = { CascadeType.ALL })
+	@OneToOne(cascade = { CascadeType.ALL })
 	private Image image;
 
 	public Author() {

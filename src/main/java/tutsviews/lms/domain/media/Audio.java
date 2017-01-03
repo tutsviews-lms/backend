@@ -1,11 +1,8 @@
 package tutsviews.lms.domain.media;
 
-import javax.persistence.CascadeType; 
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-import tutsviews.lms.domain.course.Content;
 import tutsviews.lms.domain.util.AbstractEntity;
 
 @Entity
@@ -25,8 +22,6 @@ public class Audio extends AbstractEntity {
 	@NotNull
 	private int lengthAudio;
 	
-	@OneToOne(cascade = { CascadeType. ALL })
-	private Content content;
 
 	public String getNameAudio() {
 		return nameAudio;
@@ -60,13 +55,6 @@ public class Audio extends AbstractEntity {
 		this.lengthAudio = lengthAudio;
 	}
 
-	public Content getContent() {
-		return content;
-	}
-
-	public void setContent(Content content) {
-		this.content = content;
-	}
 
 	public Audio() {
 		super();

@@ -36,7 +36,7 @@ public class CategoryRepositoryTest extends AbstractTest {
 	
 	@Test
 	public void search_OneCategoryEntryFound_ShouldReturnAListOfOneEntry() {
-		List<Category> categories = categoryRepository.query("Musique");
+		List<Category> categories = categoryRepository.query("Musi");
 		assertThat(categories.size(), is(1));
 		assertThat(categories.get(0), allOf(hasProperty("id", is(4L)), hasProperty("nameCategory", is("Musique"))));
 

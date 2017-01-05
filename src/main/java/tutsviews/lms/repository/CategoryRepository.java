@@ -12,7 +12,7 @@ import tutsviews.lms.domain.course.Category;
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 	
-	@Query("select c from Category c where c.nameCategory  LIKE LOWER(CONCAT('%', ?1, '%'))")
+	@Query("select c from Category c where c.nameCategory  LIKE CONCAT('%', ?1, '%')")
 	List<Category> query( String  searchTerm);
 
 

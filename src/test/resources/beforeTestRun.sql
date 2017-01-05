@@ -64,3 +64,12 @@ INSERT INTO `pricing` VALUES ('1', '2017-01-05 11:16:59', '99', 'NEVER', '1');
 INSERT INTO `pricing` VALUES ('2', '2017-01-05 11:17:19', '20', 'MONTHLY', '2');
 
 
+-- ----------------------------
+-- Records of category
+-- ----------------------------
+INSERT INTO `category` VALUES ('1', 'Informatique');
+INSERT INTO `category` VALUES ('2', 'Design');
+INSERT INTO `category` VALUES ('3', 'Mode');
+INSERT INTO `category` VALUES ('4', 'Musique');
+INSERT INTO `category` VALUES ('5', 'Multimédia');
+INSERT INTO `category` VALUES ('6', 'Historique');

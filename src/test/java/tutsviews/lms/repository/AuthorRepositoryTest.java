@@ -1,9 +1,6 @@
 package tutsviews.lms.repository;
 
-import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.contains;
-import static org.hamcrest.Matchers.containsString;
-import static org.hamcrest.Matchers.hasProperty;
+
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -32,13 +29,13 @@ public class AuthorRepositoryTest extends AbstractTest{
 	
 	
 	 @Test
-	    public void search_NoTodoEntriesFound_ShouldReturnEmptyList() {
+	    public void search_NoAuthorEntriesFound_ShouldReturnEmptyList() {
 	        List<Author> authors = authorRepository.getByAddressState("NOT FOUND");
 	        assertThat(authors.size(), is(0));
 	    }
 	
 	@Test
-	public void search_OneTodoEntryFound_ShouldReturnAListOfOneEntry() {
+	public void search_OneAuthorEntryFound_ShouldReturnAListOfOneEntry() {
 		List<Author> authors = authorRepository.getByAddressState("Tunisie");
 
 		assertThat(authors.size(), is(1));
@@ -50,7 +47,7 @@ public class AuthorRepositoryTest extends AbstractTest{
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void search_TwoTodoEntriesFound_ShouldReturnAListOfTwoEntries() {
+	public void search_TwoAuthorEntriesFound_ShouldReturnAListOfTwoEntries() {
         List<Author> authors = authorRepository.getByAddressState("France");
 
         assertThat(authors.size(), is(2));

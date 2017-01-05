@@ -37,6 +37,7 @@ INSERT INTO `video` VALUES ('2', '2017-01-05 10:58:42', '120', 'video 2', '/reso
 -- ----------------------------
 INSERT INTO `author` VALUES ('1', '2017-01-05 11:04:59', 'Montpellier', 'France', 'avenue du professeur louis ravas', '34080', 'le meilleur auteur du monde', 'zaier.alaeddine@gmail.com', 'Alaeddine', 'Zaier', 'coucou', '0652522113', '1');
 INSERT INTO `author` VALUES ('2', '2017-01-05 11:07:01', 'Fontainebleau', 'France', 'chemin des étoiles', '92000', 'auteur très geek', 'houssem.zaier@gmail.com', 'Houssem', 'Zaier', 'coucou', '0781490988', '2');
+INSERT INTO `author` VALUES ('3', '2017-01-05 11:07:01', 'Nabeul', 'Tunisie', 'impasse des lacs', '92000', 'auteur très connu en afrique', 'houssem.zaier@gmail.com', 'Houssem eddine', 'Zaier', 'coucou', '0781490988', '2');
 
 -- ----------------------------
 -- Records of course

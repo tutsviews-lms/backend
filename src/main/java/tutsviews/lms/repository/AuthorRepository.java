@@ -31,6 +31,8 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
 	Author getAuthorByFirstNameEquals(String firstName);
 
 	List<Author> getAuthorsByFirstNameNot(String firstName);
+	
+	List<Author> getByAddressState(String state);
 
 	List<Author> getAuthorsByFirstName(String firstName);
 

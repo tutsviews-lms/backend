@@ -18,11 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import tutsviews.lms.AbstractTest;
 import tutsviews.lms.domain.course.Category;
 
-@SqlGroup({
-    @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:beforeTestRun.sql")
-    ,
-    @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:afterTestRun.sql")
-})
+
 
 @Transactional
 public class CategoryRepositoryTest extends AbstractTest {

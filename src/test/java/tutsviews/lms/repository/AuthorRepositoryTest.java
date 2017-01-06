@@ -23,11 +23,7 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import tutsviews.lms.AbstractTest;
 import tutsviews.lms.domain.author.Author;
 
-@SqlGroup({
-    @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:beforeTestRun.sql")
-    ,
-    @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:afterTestRun.sql")
-})
+
 
 @Transactional
 public class AuthorRepositoryTest extends AbstractTest{

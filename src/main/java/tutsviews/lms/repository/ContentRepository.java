@@ -7,8 +7,7 @@ import org.springframework.stereotype.Repository;
 import tutsviews.lms.domain.course.Content;
 
 @Repository
-public interface ContentRepository extends JpaRepository<Content,Long>{
+public interface ContentRepository extends JpaRepository<Content,Long>  {
 
-	
 	
 }

@@ -1,18 +1,21 @@
 package tutsviews.lms.repository;
 
+import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.contains;
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
+import org.springframework.transaction.annotation.Transactional;
 
 import tutsviews.lms.AbstractTest;
-import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.domain.course.Category;
-
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.assertThat;
 
 @SqlGroup({
     @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:beforeTestRun.sql")
@@ -20,6 +23,7 @@ import static org.junit.Assert.assertThat;
     @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:afterTestRun.sql")
 })
 
+@Transactional
 public class CategoryRepositoryTest extends AbstractTest {
 
 	

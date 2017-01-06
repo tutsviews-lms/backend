@@ -26,7 +26,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
-@ActiveProfiles(profiles={"test","local-test"})
+@ActiveProfiles(profiles={"test"})
 @WebAppConfiguration
 public abstract class AbstractTest {
 

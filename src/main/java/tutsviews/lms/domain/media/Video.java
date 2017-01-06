@@ -5,6 +5,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import tutsviews.lms.domain.course.Content;
 import tutsviews.lms.domain.util.AbstractEntity;
 
@@ -25,6 +27,7 @@ public class Video extends AbstractEntity {
 	@NotNull
 	private int lengthVideo;
 
+	@JsonIgnore
 	@OneToOne
     @JoinColumn(name = "id")
 	private Content content;

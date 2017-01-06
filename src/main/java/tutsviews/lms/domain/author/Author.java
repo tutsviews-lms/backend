@@ -18,7 +18,6 @@ import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.util.AbstractEntity;
 
 @Entity
-@Data
 public class Author extends AbstractEntity {
 
 	
@@ -49,7 +48,7 @@ public class Author extends AbstractEntity {
 	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL,mappedBy = "author")
 	private List<Course> courses;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Image image;
 
 	public Author() {

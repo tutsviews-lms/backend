@@ -6,6 +6,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.domain.course.Content;
 import tutsviews.lms.domain.util.AbstractEntity;
 
@@ -30,10 +33,15 @@ public class Image extends AbstractEntity {
 	@NotNull
 	private int heightImage;
 
-	
+	@JsonIgnore
 	@OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id")
 	private Content content;
+	
+	@JsonIgnore
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+	private Author author;
 	
 
 	public Content getContent() {

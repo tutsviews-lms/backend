@@ -5,6 +5,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import tutsviews.lms.domain.course.Content;
 import tutsviews.lms.domain.util.AbstractEntity;
 
@@ -19,6 +21,7 @@ public class Text extends AbstractEntity {
 	@NotNull
 	private String simpleText;
 	
+	@JsonIgnore
 	@OneToOne
     @JoinColumn(name = "id")
 	private Content content;

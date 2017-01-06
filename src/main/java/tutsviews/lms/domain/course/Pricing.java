@@ -1,11 +1,13 @@
 package tutsviews.lms.domain.course;
 
-import javax.persistence.CascadeType; 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import tutsviews.lms.domain.util.AbstractEntity;
 import tutsviews.lms.domain.util.TypeRecuring;
@@ -22,6 +24,7 @@ public class Pricing extends AbstractEntity {
 	@Enumerated(EnumType.STRING)
 	private TypeRecuring typeRecuring;
 	
+	@JsonIgnore
 	@OneToOne(cascade = { CascadeType. ALL })
 	private Course course;
 

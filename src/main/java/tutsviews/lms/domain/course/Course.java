@@ -28,6 +28,7 @@ public class Course extends AbstractEntity {
 	@NotNull
 	private String titleCourse;
 	
+	
 	@JoinTable(name="course_category")
 	@ManyToMany
 	private List<Category> categories;

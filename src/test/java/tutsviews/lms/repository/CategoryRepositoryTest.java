@@ -42,4 +42,24 @@ public class CategoryRepositoryTest extends AbstractTest {
 
 	}
 	
+	
+	
+	@SuppressWarnings("unchecked")
+	@Test
+	public void search_TwoAuthorEntriesFound_ShouldReturnAListOfTwoEntries() {
+		List<Category> categories = categoryRepository.query("Mu");
+		assertThat(categories.size(), is(2));
+		assertThat(categories, contains(allOf(
+                        hasProperty("id", is(4L)),
+                        hasProperty("nameCategory", is("Musique"))
+                ),
+				allOf(
+                        hasProperty("id", is(5L)),
+                        hasProperty("nameCategory", is("Multimédia"))
+                )
+				));
+	
+	}
+	
+	
 }

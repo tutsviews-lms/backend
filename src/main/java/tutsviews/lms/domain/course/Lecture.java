@@ -21,10 +21,10 @@ public class Lecture extends AbstractEntity {
 	@NotNull
 	private int orderLecture;	
 	
-	@ManyToOne(cascade = { CascadeType. ALL })
+	@ManyToOne
 	private Section section;
 	
-	@OneToMany(cascade = { CascadeType. ALL },mappedBy = "id")
+	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL,mappedBy = "lecture")
 	private List<Content> contents;
 
 	public String getName() {

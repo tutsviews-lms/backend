@@ -29,11 +29,11 @@ public class Course extends AbstractEntity {
 	private String titleCourse;
 	
 	@JoinTable(name="course_category")
-	@ManyToMany(cascade = { CascadeType. ALL })
+	@ManyToMany
 	private List<Category> categories;
 	
 	@JsonIgnore
-	@ManyToOne(cascade = { CascadeType. ALL })
+	@ManyToOne
 	private Author author;
 	
 	@NotNull
@@ -41,10 +41,10 @@ public class Course extends AbstractEntity {
 	
 	private String description;
 	
-	@OneToOne(cascade = { CascadeType. ALL })
+	@OneToOne(cascade = CascadeType.ALL)
 	private Image image;
 	
-	@OneToMany(cascade = { CascadeType. ALL },mappedBy = "id")
+	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL,mappedBy = "course")
 	private List<Section> sections;
 	
 

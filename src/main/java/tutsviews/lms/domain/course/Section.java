@@ -26,10 +26,10 @@ public class Section extends AbstractEntity {
 	private String description;
 	
 	@JsonIgnore
-	@ManyToOne(cascade = { CascadeType. ALL })
+	@ManyToOne
 	private Course course;
 	
-	@OneToMany(cascade = { CascadeType. ALL },mappedBy = "id")
+	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL,mappedBy = "section")
 	private List<Lecture> lectures;
 	
 	

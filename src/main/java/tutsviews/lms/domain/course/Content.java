@@ -29,23 +29,23 @@ public class Content extends AbstractEntity {
 	private ContentType contentType;
 
 	@JsonIgnore
-	@ManyToOne( cascade = { CascadeType.ALL })
+	@ManyToOne
 	private Lecture lecture;
 	
 	@NotNull
 	private int orderContent;
 	
-	@OneToOne(cascade = { CascadeType. ALL })
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Image image;
 	
-	@OneToOne(cascade = { CascadeType. ALL })
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Video video;
 	
-	@OneToOne(cascade = { CascadeType. ALL })
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Audio audio;
 	
 	
-	@OneToOne(cascade = { CascadeType.ALL })
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Text text;
 
 

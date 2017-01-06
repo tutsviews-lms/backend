@@ -1,8 +1,12 @@
 package tutsviews.lms.domain.media;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import tutsviews.lms.domain.course.Content;
 import tutsviews.lms.domain.util.AbstractEntity;
 
 @Entity
@@ -27,7 +31,18 @@ public class Image extends AbstractEntity {
 	private int heightImage;
 
 	
+	@OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id")
+	private Content content;
 	
+
+	public Content getContent() {
+		return content;
+	}
+
+	public void setContent(Content content) {
+		this.content = content;
+	}
 
 	public String getNameImage() {
 		return nameImage;

@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,6 +24,7 @@ import tutsviews.lms.domain.course.Category;
     @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:afterTestRun.sql")
 })
 
+@ActiveProfiles(profiles={"test","local-test"})
 @Transactional
 public class CategoryRepositoryTest extends AbstractTest {
 

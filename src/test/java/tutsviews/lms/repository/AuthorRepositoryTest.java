@@ -29,7 +29,6 @@ import tutsviews.lms.domain.author.Author;
     @Sql(executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:afterTestRun.sql")
 })
 
-@ActiveProfiles(profiles={"test","local-test"})
 @Transactional
 public class AuthorRepositoryTest extends AbstractTest{
 

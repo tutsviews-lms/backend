@@ -2,15 +2,13 @@ package tutsviews.lms.web.rest;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import tutsviews.lms.Application;
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.service.AuthorService;
 
@@ -18,8 +16,12 @@ import tutsviews.lms.service.AuthorService;
 @RequestMapping("/authors")
 public class AuthorController {
 	
-	private static final Logger log = LoggerFactory.getLogger(Application.class);
+//	private static final Logger log = LoggerFactory.getLogger(AuthorController.class);
+	
+//	private final Logger logger = Logger.getLogger(AuthorController.class);
 
+//	@Autowired
+//	Logger log;
 	
 	@Autowired
 	AuthorService authorService;
@@ -27,7 +29,7 @@ public class AuthorController {
 	
 	@RequestMapping(value="", method=RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Author> getOne(){
-		log.error("Author list is "+authorService.getAllAuthors().size());
+//		log.info("Author list is "+authorService.getAllAuthors().size());
 		return authorService.getAllAuthors();
 	}
 	

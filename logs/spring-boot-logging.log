@@ -1,0 +1,376 @@
+2017-01-07 14:14:35.799 ERROR 11360 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-07 14:14:35.805 ERROR 11360 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-07 14:14:35.805 ERROR 11360 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-07 14:14:35.947  INFO 11360 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 11360 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-07 14:14:35.947  INFO 11360 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-07 14:14:36.045  INFO 11360 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:14:36 CET 2017]; root of context hierarchy
+2017-01-07 14:14:38.387  INFO 11360 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 14:14:38.578  INFO 11360 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3fc60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-07 14:14:39.458  INFO 11360 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-07 14:14:39.477  INFO 11360 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-07 14:14:39.488  INFO 11360 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-07 14:14:39.683  INFO 11360 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-07 14:14:39.684  INFO 11360 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3644 ms
+2017-01-07 14:14:40.096  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-07 14:14:40.102  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-07 14:14:40.103  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-07 14:14:40.104  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-07 14:14:40.104  INFO 11360 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-07 14:14:40.456  INFO 11360 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:14:40.471  INFO 11360 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-07 14:14:40.570  INFO 11360 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-07 14:14:40.577  INFO 11360 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-07 14:14:40.579  INFO 11360 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-07 14:14:40.640  INFO 11360 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-07 14:14:45.806  INFO 11360 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-07 14:14:46.733  INFO 11360 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-01-07 14:14:46.848  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: audio
+2017-01-07 14:14:46.900  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: audio
+2017-01-07 14:14:47.245  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: author
+2017-01-07 14:14:47.297  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: author
+2017-01-07 14:14:47.564  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: category
+2017-01-07 14:14:47.616  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: category
+2017-01-07 14:14:47.831  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: content
+2017-01-07 14:14:47.884  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: content
+2017-01-07 14:14:48.088  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: course
+2017-01-07 14:14:48.140  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: course
+2017-01-07 14:14:48.444  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: course_category
+2017-01-07 14:14:48.497  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: course_category
+2017-01-07 14:14:48.742  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: image
+2017-01-07 14:14:48.794  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: image
+2017-01-07 14:14:49.064  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: lecture
+2017-01-07 14:14:49.115  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: lecture
+2017-01-07 14:14:49.313  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: personne
+2017-01-07 14:14:49.364  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: personne
+2017-01-07 14:14:49.563  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: pricing
+2017-01-07 14:14:49.620  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: pricing
+2017-01-07 14:14:49.908  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: section
+2017-01-07 14:14:49.960  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: section
+2017-01-07 14:14:50.198  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: text
+2017-01-07 14:14:50.253  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: text
+2017-01-07 14:14:50.465  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: video
+2017-01-07 14:14:50.517  INFO 11360 --- [main] rmationExtractorJdbcDatabaseMetaDataImpl : HHH000262: Table not found: video
+2017-01-07 14:15:01.343  INFO 11360 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:15:02.455  INFO 11360 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 14:15:02.935  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:14:36 CET 2017]; root of context hierarchy
+2017-01-07 14:15:03.146  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/authors],methods=[GET],produces=[application/json]}" onto public java.util.List<tutsviews.lms.domain.author.Author> tutsviews.lms.web.rest.AuthorController.getOne()
+2017-01-07 14:15:03.157  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-07 14:15:03.162  INFO 11360 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-07 14:15:03.219  INFO 11360 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:15:03.219  INFO 11360 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:15:03.286  INFO 11360 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:15:03.321  INFO 11360 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2017-01-07 14:15:03.702  INFO 11360 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-07 14:15:03.855  INFO 11360 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-07 14:15:03.862  INFO 11360 --- [main] tutsviews.lms.Application                : Application name :ApplicationDev
+2017-01-07 14:15:03.863  INFO 11360 --- [main] tutsviews.lms.Application                : Started Application in 28.536 seconds (JVM running for 29.286)
+2017-01-07 14:18:03.798  INFO 11360 --- [RMI TCP Connection(2)-192.168.1.94] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-01-07 14:18:03.798  INFO 11360 --- [RMI TCP Connection(2)-192.168.1.94] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:14:36 CET 2017]; root of context hierarchy
+2017-01-07 14:18:03.810  INFO 11360 --- [RMI TCP Connection(2)-192.168.1.94] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-07 14:18:03.827  INFO 11360 --- [RMI TCP Connection(2)-192.168.1.94] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:18:07.436 ERROR 8960 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-07 14:18:07.442 ERROR 8960 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-07 14:18:07.442 ERROR 8960 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-07 14:18:07.588  INFO 8960 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 8960 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-07 14:18:07.588  INFO 8960 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-07 14:18:07.680  INFO 8960 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:18:07 CET 2017]; root of context hierarchy
+2017-01-07 14:18:09.822  INFO 8960 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 14:18:10.056  INFO 8960 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3fc60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-07 14:18:10.839  INFO 8960 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-07 14:18:10.862  INFO 8960 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-07 14:18:10.871  INFO 8960 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-07 14:18:11.089  INFO 8960 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-07 14:18:11.089  INFO 8960 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3413 ms
+2017-01-07 14:18:11.343  INFO 8960 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-07 14:18:11.349  INFO 8960 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-07 14:18:11.350  INFO 8960 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-07 14:18:11.350  INFO 8960 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-07 14:18:11.351  INFO 8960 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-07 14:18:11.798  INFO 8960 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:18:11.822  INFO 8960 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-07 14:18:11.950  INFO 8960 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-07 14:18:11.953  INFO 8960 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-07 14:18:11.955  INFO 8960 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-07 14:18:12.031  INFO 8960 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-07 14:18:17.468  INFO 8960 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-07 14:18:18.360  INFO 8960 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-01-07 14:18:40.903  INFO 8960 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:18:42.000  INFO 8960 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 14:18:42.437  INFO 8960 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:18:07 CET 2017]; root of context hierarchy
+2017-01-07 14:18:42.604  INFO 8960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/authors],methods=[GET],produces=[application/json]}" onto public java.util.List<tutsviews.lms.domain.author.Author> tutsviews.lms.web.rest.AuthorController.getOne()
+2017-01-07 14:18:42.611  INFO 8960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-07 14:18:42.611  INFO 8960 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-07 14:18:42.662  INFO 8960 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:18:42.665  INFO 8960 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:18:42.737  INFO 8960 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:18:42.777  INFO 8960 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2017-01-07 14:18:43.201  INFO 8960 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-07 14:18:43.502  INFO 8960 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-07 14:18:43.528  INFO 8960 --- [main] tutsviews.lms.Application                : Application name :ApplicationDev
+2017-01-07 14:18:43.531  INFO 8960 --- [main] tutsviews.lms.Application                : Started Application in 36.519 seconds (JVM running for 37.36)
+2017-01-07 14:21:33.417  INFO 8960 --- [RMI TCP Connection(2)-192.168.1.94] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-01-07 14:21:33.418  INFO 8960 --- [RMI TCP Connection(2)-192.168.1.94] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:18:07 CET 2017]; root of context hierarchy
+2017-01-07 14:21:33.438  INFO 8960 --- [RMI TCP Connection(2)-192.168.1.94] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-07 14:21:33.449  INFO 8960 --- [RMI TCP Connection(2)-192.168.1.94] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:21:37.990 ERROR 10356 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-07 14:21:37.996 ERROR 10356 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-07 14:21:37.996 ERROR 10356 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-07 14:21:38.144  INFO 10356 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 10356 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-07 14:21:38.145  INFO 10356 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-07 14:21:38.222  INFO 10356 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:21:38 CET 2017]; root of context hierarchy
+2017-01-07 14:21:40.454  INFO 10356 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 14:21:40.662  INFO 10356 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3fc60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-07 14:21:41.401  INFO 10356 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-07 14:21:41.421  INFO 10356 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-07 14:21:41.423  INFO 10356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-07 14:21:41.603  INFO 10356 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-07 14:21:41.603  INFO 10356 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3385 ms
+2017-01-07 14:21:41.861  INFO 10356 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-07 14:21:41.867  INFO 10356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-07 14:21:41.868  INFO 10356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-07 14:21:41.868  INFO 10356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-07 14:21:41.868  INFO 10356 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-07 14:21:42.272  INFO 10356 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:21:42.296  INFO 10356 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-07 14:21:42.430  INFO 10356 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-07 14:21:42.433  INFO 10356 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-07 14:21:42.435  INFO 10356 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-07 14:21:42.504  INFO 10356 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-07 14:21:47.742  INFO 10356 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-07 14:21:48.649  INFO 10356 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-01-07 14:22:10.657  INFO 10356 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:22:11.748  INFO 10356 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 14:22:11.990  INFO 10356 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:21:38 CET 2017]; root of context hierarchy
+2017-01-07 14:22:12.102  INFO 10356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/authors],methods=[GET],produces=[application/json]}" onto public java.util.List<tutsviews.lms.domain.author.Author> tutsviews.lms.web.rest.AuthorController.getOne()
+2017-01-07 14:22:12.107  INFO 10356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-07 14:22:12.108  INFO 10356 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-07 14:22:12.169  INFO 10356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:22:12.169  INFO 10356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:22:12.227  INFO 10356 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:22:12.265  INFO 10356 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2017-01-07 14:22:12.687  INFO 10356 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-07 14:22:13.002  INFO 10356 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-07 14:22:13.011  INFO 10356 --- [main] tutsviews.lms.Application                : Application name :ApplicationDev
+2017-01-07 14:22:13.013  INFO 10356 --- [main] tutsviews.lms.Application                : Started Application in 35.449 seconds (JVM running for 36.194)
+2017-01-07 14:23:22.636  INFO 10356 --- [RMI TCP Connection(2)-192.168.1.94] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-01-07 14:23:22.637  INFO 10356 --- [RMI TCP Connection(2)-192.168.1.94] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:21:38 CET 2017]; root of context hierarchy
+2017-01-07 14:23:22.647  INFO 10356 --- [RMI TCP Connection(2)-192.168.1.94] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-07 14:23:22.653  INFO 10356 --- [RMI TCP Connection(2)-192.168.1.94] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:23:28.115 ERROR 5760 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-07 14:23:28.122 ERROR 5760 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-07 14:23:28.122 ERROR 5760 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-07 14:23:28.266  INFO 5760 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 5760 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-07 14:23:28.267  INFO 5760 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-07 14:23:28.390  INFO 5760 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:23:28 CET 2017]; root of context hierarchy
+2017-01-07 14:23:30.543  INFO 5760 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 14:23:30.784  INFO 5760 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3fc60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-07 14:23:31.441  INFO 5760 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-07 14:23:31.457  INFO 5760 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-07 14:23:31.459  INFO 5760 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-07 14:23:31.637  INFO 5760 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-07 14:23:31.638  INFO 5760 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3252 ms
+2017-01-07 14:23:31.891  INFO 5760 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-07 14:23:31.897  INFO 5760 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-07 14:23:31.897  INFO 5760 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-07 14:23:31.898  INFO 5760 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-07 14:23:31.898  INFO 5760 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-07 14:23:32.460  INFO 5760 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:23:32.484  INFO 5760 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-07 14:23:32.642  INFO 5760 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-07 14:23:32.654  INFO 5760 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-07 14:23:32.656  INFO 5760 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-07 14:23:32.721  INFO 5760 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-07 14:23:38.393  INFO 5760 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-07 14:23:39.301  INFO 5760 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-01-07 14:24:03.263 ERROR 1500 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-07 14:24:03.269 ERROR 1500 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-07 14:24:03.270 ERROR 1500 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-07 14:24:03.425  INFO 1500 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 1500 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-07 14:24:03.425  INFO 1500 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-07 14:24:03.514  INFO 1500 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:24:03 CET 2017]; root of context hierarchy
+2017-01-07 14:24:06.121  INFO 1500 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 14:24:06.381  INFO 1500 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3fc60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-07 14:24:07.226  INFO 1500 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-07 14:24:07.250  INFO 1500 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-07 14:24:07.253  INFO 1500 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-07 14:24:07.480  INFO 1500 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-07 14:24:07.481  INFO 1500 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3972 ms
+2017-01-07 14:24:07.798  INFO 1500 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-07 14:24:07.804  INFO 1500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-07 14:24:07.804  INFO 1500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-07 14:24:07.805  INFO 1500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-07 14:24:07.805  INFO 1500 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-07 14:24:08.464  INFO 1500 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:24:08.488  INFO 1500 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-07 14:24:08.615  INFO 1500 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-07 14:24:08.624  INFO 1500 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-07 14:24:08.626  INFO 1500 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-07 14:24:08.693  INFO 1500 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-07 14:24:14.514  INFO 1500 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-07 14:24:15.369  INFO 1500 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-01-07 14:24:40.654  INFO 1500 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:24:41.789  INFO 1500 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 14:24:42.081  INFO 1500 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:24:03 CET 2017]; root of context hierarchy
+2017-01-07 14:24:42.221  INFO 1500 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/authors],methods=[GET],produces=[application/json]}" onto public java.util.List<tutsviews.lms.domain.author.Author> tutsviews.lms.web.rest.AuthorController.getOne()
+2017-01-07 14:24:42.241  INFO 1500 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-07 14:24:42.242  INFO 1500 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-07 14:24:42.313  INFO 1500 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:24:42.314  INFO 1500 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:24:42.382  INFO 1500 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:24:42.418  INFO 1500 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2017-01-07 14:24:42.840  INFO 1500 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-07 14:24:42.945  INFO 1500 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-07 14:24:42.956  INFO 1500 --- [main] tutsviews.lms.Application                : Application name :ApplicationDev
+2017-01-07 14:24:42.958  INFO 1500 --- [main] tutsviews.lms.Application                : Started Application in 40.129 seconds (JVM running for 40.849)
+2017-01-07 14:25:38.008  INFO 1500 --- [RMI TCP Connection(2)-192.168.1.94] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-01-07 14:25:38.010  INFO 1500 --- [RMI TCP Connection(2)-192.168.1.94] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:24:03 CET 2017]; root of context hierarchy
+2017-01-07 14:25:38.012  INFO 1500 --- [RMI TCP Connection(2)-192.168.1.94] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-07 14:25:38.016  INFO 1500 --- [RMI TCP Connection(2)-192.168.1.94] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:25:41.397 ERROR 10716 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-07 14:25:41.403 ERROR 10716 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-07 14:25:41.404 ERROR 10716 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-07 14:25:41.837  INFO 10716 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 10716 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-07 14:25:41.837  INFO 10716 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-07 14:25:41.978  INFO 10716 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:25:41 CET 2017]; root of context hierarchy
+2017-01-07 14:25:43.937  INFO 10716 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 14:25:44.179  INFO 10716 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d26590f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-07 14:25:45.010  INFO 10716 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-07 14:25:45.031  INFO 10716 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-07 14:25:45.033  INFO 10716 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-07 14:25:45.239  INFO 10716 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-07 14:25:45.240  INFO 10716 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3266 ms
+2017-01-07 14:25:45.470  INFO 10716 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-07 14:25:45.480  INFO 10716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-07 14:25:45.480  INFO 10716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-07 14:25:45.485  INFO 10716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-07 14:25:45.486  INFO 10716 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-07 14:25:45.972  INFO 10716 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:25:45.996  INFO 10716 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-07 14:25:46.107  INFO 10716 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-07 14:25:46.109  INFO 10716 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-07 14:25:46.112  INFO 10716 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-07 14:25:46.183  INFO 10716 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-07 14:25:52.163  INFO 10716 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-07 14:25:53.055  INFO 10716 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-01-07 14:26:15.817  INFO 10716 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:26:16.752  INFO 10716 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 14:26:17.110  INFO 10716 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:25:41 CET 2017]; root of context hierarchy
+2017-01-07 14:26:17.259  INFO 10716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/authors],methods=[GET],produces=[application/json]}" onto public java.util.List<tutsviews.lms.domain.author.Author> tutsviews.lms.web.rest.AuthorController.getOne()
+2017-01-07 14:26:17.268  INFO 10716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-07 14:26:17.274  INFO 10716 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-07 14:26:17.329  INFO 10716 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:26:17.329  INFO 10716 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:26:17.403  INFO 10716 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:26:17.445  INFO 10716 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2017-01-07 14:26:17.928  INFO 10716 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-07 14:26:18.061  INFO 10716 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-07 14:26:18.067  INFO 10716 --- [main] tutsviews.lms.Application                : Application name :ApplicationDev
+2017-01-07 14:26:18.069  INFO 10716 --- [main] tutsviews.lms.Application                : Started Application in 37.091 seconds (JVM running for 37.879)
+2017-01-07 14:27:25.690  INFO 10716 --- [RMI TCP Connection(2)-192.168.1.94] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-01-07 14:27:25.691  INFO 10716 --- [RMI TCP Connection(2)-192.168.1.94] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:25:41 CET 2017]; root of context hierarchy
+2017-01-07 14:27:25.693  INFO 10716 --- [RMI TCP Connection(2)-192.168.1.94] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-01-07 14:27:25.698  INFO 10716 --- [RMI TCP Connection(2)-192.168.1.94] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:30:38.644 ERROR 6020 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-07 14:30:38.651 ERROR 6020 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-07 14:30:38.651 ERROR 6020 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-07 14:30:38.790  INFO 6020 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 6020 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-07 14:30:38.790  INFO 6020 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-07 14:30:38.896  INFO 6020 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:30:38 CET 2017]; root of context hierarchy
+2017-01-07 14:30:41.409  INFO 6020 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-07 14:30:41.657  INFO 6020 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3fc60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-07 14:30:42.401  INFO 6020 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-07 14:30:42.425  INFO 6020 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-07 14:30:42.432  INFO 6020 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-07 14:30:42.598  INFO 6020 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-07 14:30:42.599  INFO 6020 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3717 ms
+2017-01-07 14:30:42.890  INFO 6020 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-07 14:30:42.896  INFO 6020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-07 14:30:42.896  INFO 6020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-07 14:30:42.897  INFO 6020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-07 14:30:42.897  INFO 6020 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-07 14:30:43.333  INFO 6020 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:30:43.356  INFO 6020 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-07 14:30:43.496  INFO 6020 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-07 14:30:43.499  INFO 6020 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-07 14:30:43.510  INFO 6020 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-07 14:30:43.571  INFO 6020 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-07 14:30:49.056  INFO 6020 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2017-01-07 14:30:50.059  INFO 6020 --- [main] org.hibernate.tool.hbm2ddl.SchemaUpdate  : HHH000228: Running hbm2ddl schema update
+2017-01-07 14:31:13.056  INFO 6020 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-01-07 14:31:14.217  INFO 6020 --- [main] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2017-01-07 14:31:14.524  INFO 6020 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sat Jan 07 14:30:38 CET 2017]; root of context hierarchy
+2017-01-07 14:31:14.696  INFO 6020 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/authors],methods=[GET],produces=[application/json]}" onto public java.util.List<tutsviews.lms.domain.author.Author> tutsviews.lms.web.rest.AuthorController.getOne()
+2017-01-07 14:31:14.708  INFO 6020 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-01-07 14:31:14.713  INFO 6020 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-01-07 14:31:14.771  INFO 6020 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:31:14.772  INFO 6020 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:31:14.837  INFO 6020 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-01-07 14:31:14.874  INFO 6020 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2017-01-07 14:31:15.354  INFO 6020 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-01-07 14:31:15.698  INFO 6020 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8080 (http)
+2017-01-07 14:31:15.702  INFO 6020 --- [main] tutsviews.lms.Application                : Application name :ApplicationDev
+2017-01-07 14:31:15.704  INFO 6020 --- [main] tutsviews.lms.Application                : Started Application in 37.494 seconds (JVM running for 38.225)
+2017-01-08 09:33:05.155 ERROR 2488 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-08 09:33:05.215 ERROR 2488 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-08 09:33:05.216 ERROR 2488 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-08 09:33:05.433  INFO 2488 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 2488 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-08 09:33:05.433  INFO 2488 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-08 09:33:05.526  INFO 2488 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sun Jan 08 09:33:05 CET 2017]; root of context hierarchy
+2017-01-08 09:33:08.106  INFO 2488 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-01-08 09:33:08.403  INFO 2488 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$eb3fc60] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-01-08 09:33:09.274  INFO 2488 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8080 (http)
+2017-01-08 09:33:09.297  INFO 2488 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2017-01-08 09:33:09.300  INFO 2488 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.6
+2017-01-08 09:33:09.527  INFO 2488 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-01-08 09:33:09.527  INFO 2488 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4007 ms
+2017-01-08 09:33:09.798  INFO 2488 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-01-08 09:33:09.806  INFO 2488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-01-08 09:33:09.807  INFO 2488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-01-08 09:33:09.807  INFO 2488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-01-08 09:33:09.808  INFO 2488 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-01-08 09:33:10.285  INFO 2488 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-01-08 09:33:10.309  INFO 2488 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-01-08 09:33:10.430  INFO 2488 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.11.Final}
+2017-01-08 09:33:10.433  INFO 2488 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2017-01-08 09:33:10.435  INFO 2488 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2017-01-08 09:33:10.503  INFO 2488 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-01-08 09:33:59.364 ERROR 8276 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-08 09:33:59.370 ERROR 8276 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-08 09:33:59.370 ERROR 8276 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-08 09:33:59.575  INFO 8276 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 8276 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-08 09:33:59.575  INFO 8276 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-08 09:33:59.681  INFO 8276 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sun Jan 08 09:33:59 CET 2017]; root of context hierarchy
+2017-01-08 09:34:17.815 ERROR 1684 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-08 09:34:17.824 ERROR 1684 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-08 09:34:17.824 ERROR 1684 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-08 09:34:18.023  INFO 1684 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 1684 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-08 09:34:18.023  INFO 1684 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-08 09:34:18.146  INFO 1684 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sun Jan 08 09:34:18 CET 2017]; root of context hierarchy
+2017-01-08 09:34:54.465 ERROR 7780 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-08 09:34:54.473 ERROR 7780 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-08 09:34:54.474 ERROR 7780 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-08 09:34:54.759  INFO 7780 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 7780 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-08 09:34:54.759  INFO 7780 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-08 09:34:54.858  INFO 7780 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sun Jan 08 09:34:54 CET 2017]; root of context hierarchy
+2017-01-08 09:36:33.261 ERROR 9104 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: INFO   for 'org.springframework.web'
+2017-01-08 09:36:33.267 ERROR 9104 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: ERROR   for 'org.hibernate'
+2017-01-08 09:36:33.267 ERROR 9104 --- [main] o.s.b.l.LoggingApplicationListener       : Cannot set level: DEBUG   for 'guru.springframework.controllers'
+2017-01-08 09:36:33.454  INFO 9104 --- [main] tutsviews.lms.Application                : Starting Application on Aladin-SeniorHome with PID 9104 (started by IBS in C:\Users\IBS\Documents\Dropbox Tutsviews\Dropbox\source\backend)
+2017-01-08 09:36:33.454  INFO 9104 --- [main] tutsviews.lms.Application                : The following profiles are active: dev
+2017-01-08 09:36:33.559  INFO 9104 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c41ed1d: startup date [Sun Jan 08 09:36:33 CET 2017]; root of context hierarchy

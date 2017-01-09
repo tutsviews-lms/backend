@@ -6,11 +6,22 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-@EnableTransactionManagement
+
+
+
 @SpringBootApplication
-public class Application implements CommandLineRunner {
+public class Application extends SpringBootServletInitializer implements CommandLineRunner {
+
+	
+	
+	@Override
+	    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	        return application.sources(Application.class);
+	    }
+	  
 	
 	private static final Logger log = LoggerFactory.getLogger(Application.class);
 
@@ -25,7 +36,6 @@ public class Application implements CommandLineRunner {
 	@Override
 	public void run(String... arg0) throws Exception{
 		log.info("Application name :{}", applicationName);
-		
 		
 	}
 	

@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-@ComponentScan("tutsviews.lms")
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
 	

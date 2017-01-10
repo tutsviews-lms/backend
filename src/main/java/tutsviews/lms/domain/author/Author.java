@@ -22,25 +22,10 @@ import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.util.AbstractEntity;
 
 @Entity
-//@Getter
-//@Setter
-//@Builder
-//@NoArgsConstructor
-//@AllArgsConstructor
 public class Author extends AbstractEntity {
 
 	
 	private static final long serialVersionUID = 1L;
-
-	private String sex;
-	
-	public String getSex() {
-		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
 
 	@NotNull
 	private String lastName;

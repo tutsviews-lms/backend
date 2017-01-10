@@ -10,22 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import tutsviews.lms.domain.author.Author;
-import tutsviews.lms.service.AuthorService;
+import tutsviews.lms.service.CourseService;
 
 @Controller
-@RequestMapping("/authors")
-public class AuthorController {
-
-	@Autowired
-	AuthorService authorService;
-
+@RequestMapping("/courses")
+public class CourseController {
+	
+	
+	@Autowired 
+	CourseService courseService;
+	
 	@Autowired
 	Logger logger;
-
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Author> getOne() {
-		logger.info("Author list size is " + authorService.getAllAuthors().size());
-		return authorService.getAllAuthors();
+	
+	
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public String getAll(){
+	return "les cours";
 	}
 
 }

@@ -10,20 +10,17 @@ import tutsviews.lms.repository.AuthorRepository;
 import tutsviews.lms.service.AuthorService;
 
 @Service
-public class AuthorServiceImpl implements AuthorService{
+public class AuthorServiceImpl implements AuthorService {
 
-	
 	@Autowired
 	AuthorRepository authorRepository;
-	
+
 	public List<Author> getAllAuthors() {
-		
+
 		return authorRepository.findAll();
 	}
 
-	
-	public Author getOne(int id) {
-		
+	public Author getOnAuthor(int id) {
 		return authorRepository.findOne((long) id);
 	}
 

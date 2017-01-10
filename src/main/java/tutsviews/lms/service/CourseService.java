@@ -9,4 +9,6 @@ public interface CourseService {
 	
 	List<Course> getAllCourses();
 	
+	Course getOneCourse(int id);
+	
 }

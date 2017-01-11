@@ -1,19 +1,40 @@
 package tutsviews.lms.web.rest;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import tutsviews.lms.service.AuthorService;
 
 @Controller
 public class HomeController {
-
+    
 	
-    @RequestMapping("/")
-    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
-        model.addAttribute("name", name);
-        return "index";
+	@Autowired
+	AuthorService authorService;
 
+
+    @GetMapping("/")
+    public String home(HttpServletRequest request) {
+		request.setAttribute("mode", "MODE_HOME");
+    	return "index";
 } 
+    
+    @GetMapping("/welcome/")
+    public String welcome() {
+    	return "welcome";
+} 
+	
+	
+    
+//    @RequestMapping("/")
+//    public String hello(Model model, @RequestParam(value="name", required=false, defaultValue="World") String name) {
+//        model.addAttribute("name", name);
+//        return "index";
+//} 
+	
+	
     
 }

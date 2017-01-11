@@ -10,6 +10,10 @@ public interface AuthorService {
 	
 	Author getOnAuthor(int id);
 	
+	void deleteAuthor(int id);
+	
+	void saveAuthor(Author author);
+	
 	
 	
 }

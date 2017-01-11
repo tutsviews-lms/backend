@@ -1,13 +1,15 @@
 package tutsviews.lms.web.rest;
 
-import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.service.AuthorService;
@@ -22,10 +24,44 @@ public class AuthorController {
 	@Autowired
 	Logger logger;
 
-	@RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Author> getOne() {
+	@GetMapping("/")
+	public String allAuthors(HttpServletRequest request) {
 		logger.info("Author list size is " + authorService.getAllAuthors().size());
-		return authorService.getAllAuthors();
+		request.setAttribute("authors", authorService.getAllAuthors());
+		request.setAttribute("mode", "MODE_AUTHORS");
+    	return "index";
+	}
+	
+	
+	@GetMapping("/new")
+	public String newAuthor(HttpServletRequest request) {
+		request.setAttribute("mode", "MODE_NEW_AUTHOR");
+    	return "index";
+	}
+	
+	@PostMapping("/save")
+	public String saveAuthor(@ModelAttribute Author author, HttpServletRequest request) {
+		authorService.saveAuthor(author);
+		request.setAttribute("authors", authorService.getAllAuthors());
+		request.setAttribute("mode", "MODE_AUTHORS");
+    	return "index";
+	}
+	
+	
+	@GetMapping("/update")
+	public String updateAuthor(@RequestParam int id, HttpServletRequest request) {
+		request.setAttribute("author", authorService.getOnAuthor(id));
+		request.setAttribute("mode", "MODE_UPDATE_AUTHOR");
+    	return "index";
+	}
+
+	
+	@GetMapping("/delete")
+	public String deleteAuthor(@RequestParam int id, HttpServletRequest request) {
+		authorService.deleteAuthor(id);
+		request.setAttribute("authors", authorService.getAllAuthors());
+		request.setAttribute("mode", "MODE_AUTHORS");
+    	return "index";
 	}
 
 }

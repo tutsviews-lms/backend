@@ -24,4 +24,12 @@ public class AuthorServiceImpl implements AuthorService {
 		return authorRepository.findOne((long) id);
 	}
 
+	public void deleteAuthor(int id) {
+		authorRepository.delete((long) id);
+	}
+
+	public void saveAuthor(Author author) {
+		authorRepository.save(author);
+
+	}
 }

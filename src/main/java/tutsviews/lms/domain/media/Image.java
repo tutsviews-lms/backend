@@ -34,12 +34,12 @@ public class Image extends AbstractEntity {
 	private int heightImage;
 
 	@JsonIgnore
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
     @JoinColumn(name = "id")
 	private Content content;
 	
 	@JsonIgnore
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
     @JoinColumn(name = "id")
 	private Author author;
 	

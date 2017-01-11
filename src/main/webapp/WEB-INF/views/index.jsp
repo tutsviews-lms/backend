@@ -41,9 +41,8 @@
 			<a href="/" class="navbar-brand">TutsViews</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="authors">Nos auteurs</a></li>
-					<li><a href="authors/new">Gestion des auteurs</a></li>
-					<li><a href="new-task">Manage Resources</a></li>
+					<li><a href="/authors">Nos auteurs</a></li>
+					<li><a href="/authors/new">Gestion des auteurs</a></li>
 				</ul>
 			</div>
 		</div>
@@ -78,6 +77,7 @@
 								<th>Tel</th>
 								<th>Email</th>
 								<th>Mot de passe</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -89,6 +89,7 @@
 									<td>${author.tel}</td>
 									<td>${author.email}</td>
 									<td>${author.password}</td>
+									<td><a href="/authors/delete?id=${author.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 
 							</c:forEach>

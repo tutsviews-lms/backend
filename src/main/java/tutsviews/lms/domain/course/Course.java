@@ -34,7 +34,7 @@ public class Course extends AbstractEntity {
 	private List<Category> categories;
 	
 	@JsonIgnore
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Author author;
 	
 	@NotNull
@@ -45,7 +45,7 @@ public class Course extends AbstractEntity {
 	@OneToOne(cascade = CascadeType.ALL)
 	private Image image;
 	
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "course")
+	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL,mappedBy = "course")
 	private List<Section> sections;
 	
 

@@ -20,8 +20,10 @@
 <title>TutsViews Manager</title>
 
 
-<link rel="stylesheet" href="<spring:url value="/css/bootstrap.min.css"/>" type="text/css" />
-<link rel="stylesheet" href="<spring:url value="/css/style.css"/>"type="text/css" />
+<link rel="stylesheet"
+	href="<spring:url value="/css/bootstrap.min.css"/>" type="text/css" />
+<link rel="stylesheet" href="<spring:url value="/css/style.css"/>"
+	type="text/css" />
 
 <!--[if lt IE 9]>
 		<script src="static/js/html5shiv.min.js"></script>
@@ -57,40 +59,53 @@
 	</div>
 
 
-		<div class="container text-center" id="authorsDiv">
-			<h3>Tustsviews Authors</h3>
-			<hr>
-			<div class="table-responsive">
-				<table class="table table-striped table-bordered text-left">
-					<thead>
+	<div class="container text-center invisible-at-first" id="authorsDiv">
+		<h3>Tustsviews Authors</h3>
+		<hr>
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered text-left">
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Nom</th>
+						<th>Prénom</th>
+						<th>Tel</th>
+						<th>Email</th>
+						<th>Mot de passe</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="author" items="${authors}">
 						<tr>
-							<th>Id</th>
-							<th>Nom</th>
-							<th>Prénom</th>
-							<th>Tel</th>
-							<th>Email</th>
-							<th>Mot de passe</th>
+							<td>${author.id}</td>
+							<td>${author.lastName}</td>
+							<td>${author.firstName}</td>
+							<td>${author.tel}</td>
+							<td>${author.email}</td>
+							<td>${author.password}</td>
 						</tr>
-					</thead>
-					<tbody>
-						<c:forEach var="author" items="${authors}">
-							<tr>
-								<td>${author.id}</td>
-								<td>${author.lastName}</td>
-								<td>${author.firstName}</td>
-								<td>${author.tel}</td>
-								<td>${author.email}</td>
-								<td>${author.password}</td>
-							</tr>
 
-						</c:forEach>
+					</c:forEach>
 
-					</tbody>
-				</table>
-			</div>
+				</tbody>
+			</table>
 		</div>
+	</div>
 
+	<div class="container text-center">
+		<h3>Manage Author</h3>
+		<form class="form-horizontal" method="POST" action="save-author">
+			<input type="hidden" name="id" value="${author.id}" />
+			<div class="form-group">
+				<label class="control-label col-md-3">Name</label>
+				<div class="col-md-5">
+					<input type="text" class="form-control" name="name"
+						value="${author.lastName}">
 
+				</div>
+			</div>
+		</form>
+	</div>
 
 
 

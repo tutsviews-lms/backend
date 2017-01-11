@@ -29,7 +29,7 @@ public class Section extends AbstractEntity {
 	@ManyToOne
 	private Course course;
 	
-	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL,mappedBy = "section")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "section")
 	private List<Lecture> lectures;
 	
 	

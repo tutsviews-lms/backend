@@ -35,17 +35,17 @@ public class Content extends AbstractEntity {
 	@NotNull
 	private int orderContent;
 	
-	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL)
 	private Image image;
 	
-	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL)
 	private Video video;
 	
-	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL)
 	private Audio audio;
 	
 	
-	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL)
 	private Text text;
 
 

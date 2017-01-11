@@ -27,7 +27,7 @@ public class Lecture extends AbstractEntity {
 	@ManyToOne
 	private Section section;
 	
-	@OneToMany(orphanRemoval = true, cascade = CascadeType.ALL,mappedBy = "lecture")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "lecture")
 	private List<Content> contents;
 
 	public String getName() {

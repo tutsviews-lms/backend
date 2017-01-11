@@ -94,13 +94,30 @@
 
 	<div class="container text-center">
 		<h3>Manage Author</h3>
+		<hr>
 		<form class="form-horizontal" method="POST" action="save-author">
 			<input type="hidden" name="id" value="${author.id}" />
 			<div class="form-group">
-				<label class="control-label col-md-3">Name</label>
-				<div class="col-md-5">
-					<input type="text" class="form-control" name="name"
+				<label class="control-label col-md-3">Non de famille</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="lastName"
 						value="${author.lastName}">
+
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3">Prénom</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="firstName"
+						value="${author.firstName}">
+
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3">Description</label>
+				<div class="col-md-7">
+					<input type="text" class="form-control" name="description"
+						value="${author.description}">
 
 				</div>
 			</div>

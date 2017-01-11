@@ -41,8 +41,8 @@
 			<a href="/" class="navbar-brand">TutsViews</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="new-task">Manage Courses</a></li>
-					<li><a href="authors">Manage Authors</a></li>
+					<li><a href="authors">Nos auteurs</a></li>
+					<li><a href="authors/new">Gestion des auteurs</a></li>
 					<li><a href="new-task">Manage Resources</a></li>
 				</ul>
 			</div>
@@ -50,79 +50,150 @@
 	</div>
 
 
+	<c:choose>
+		<c:when test="${mode == 'MODE_HOME'}">
 
-
-	<div class="container invisible-at-first" id="homeDiv">
-		<div class="jumbotron text-center">
-			<h1>Welcome to TutsViews Manager</h1>
-		</div>
-	</div>
-
-
-	<div class="container text-center invisible-at-first" id="authorsDiv">
-		<h3>Tustsviews Authors</h3>
-		<hr>
-		<div class="table-responsive">
-			<table class="table table-striped table-bordered text-left">
-				<thead>
-					<tr>
-						<th>Id</th>
-						<th>Nom</th>
-						<th>Prénom</th>
-						<th>Tel</th>
-						<th>Email</th>
-						<th>Mot de passe</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="author" items="${authors}">
-						<tr>
-							<td>${author.id}</td>
-							<td>${author.lastName}</td>
-							<td>${author.firstName}</td>
-							<td>${author.tel}</td>
-							<td>${author.email}</td>
-							<td>${author.password}</td>
-						</tr>
-
-					</c:forEach>
-
-				</tbody>
-			</table>
-		</div>
-	</div>
-
-	<div class="container text-center">
-		<h3>Manage Author</h3>
-		<hr>
-		<form class="form-horizontal" method="POST" action="save-author">
-			<input type="hidden" name="id" value="${author.id}" />
-			<div class="form-group">
-				<label class="control-label col-md-3">Non de famille</label>
-				<div class="col-md-7">
-					<input type="text" class="form-control" name="lastName"
-						value="${author.lastName}">
-
+			<div class="container" id="homeDiv">
+				<div class="jumbotron text-center">
+					<h1>Welcome to TutsViews Manager</h1>
 				</div>
 			</div>
-			<div class="form-group">
-				<label class="control-label col-md-3">Prénom</label>
-				<div class="col-md-7">
-					<input type="text" class="form-control" name="firstName"
-						value="${author.firstName}">
 
+		</c:when>
+	</c:choose>
+
+	<c:choose>
+		<c:when test="${mode == 'MODE_AUTHORS'}">
+
+			<div class="container text-center " id="authorsDiv">
+				<h3>Tustsviews Authors</h3>
+				<hr>
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered text-left">
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nom</th>
+								<th>Prénom</th>
+								<th>Tel</th>
+								<th>Email</th>
+								<th>Mot de passe</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach var="author" items="${authors}">
+								<tr>
+									<td>${author.id}</td>
+									<td>${author.lastName}</td>
+									<td>${author.firstName}</td>
+									<td>${author.tel}</td>
+									<td>${author.email}</td>
+									<td>${author.password}</td>
+								</tr>
+
+							</c:forEach>
+
+						</tbody>
+					</table>
 				</div>
 			</div>
-			<div class="form-group">
-				<label class="control-label col-md-3">Description</label>
-				<div class="col-md-7">
-					<input type="text" class="form-control" name="description"
-						value="${author.description}">
+		</c:when>
+	</c:choose>
 
-				</div>
+	<c:choose>
+		<c:when
+			test="${mode == 'MODE_NEW_AUTHOR' || mode == 'MODE_UPDATE_AUTHOR'}">
+
+			<div class="container text-center">
+				<h3>Manage Author</h3>
+				<hr>
+				<form class="form-horizontal" method="POST" action="save-author">
+					<input type="hidden" name="id" value="${author.id}" />
+					<div class="form-group">
+						<label class="control-label col-md-3">Non de famille</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="lastName"
+								value="${author.lastName}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Prénom</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="firstName"
+								value="${author.firstName}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Description</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="description"
+								value="${author.description}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Téléphone</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="tel"
+								value="${author.tel}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Adresse mail</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="email"
+								value="${author.email}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Mot de passe</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="password"
+								value="${author.password}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Voie</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="street"
+								value="${author.state}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Code Zip</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="zipCode"
+								value="${author.zipCode}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Ville</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="city"
+								value="${author.city}">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3">Pays</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" name="state"
+								value="${author.state}">
+						</div>
+					</div>
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Enregistrer">
+					</div>
+				</form>
 			</div>
-		</form>
-	</div>
+		</c:when>
+	</c:choose>
+
+
+
+
+
+
+
+
 
 
 

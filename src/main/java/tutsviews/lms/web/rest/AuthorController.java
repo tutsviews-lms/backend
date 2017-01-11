@@ -8,14 +8,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.service.AuthorService;
 
 @Controller
-@RequestMapping("/authors")
 public class AuthorController {
 
 	@Autowired
@@ -24,7 +22,7 @@ public class AuthorController {
 	@Autowired
 	Logger logger;
 
-	@GetMapping("/")
+	@GetMapping("/authors")
 	public String allAuthors(HttpServletRequest request) {
 		logger.info("Author list size is " + authorService.getAllAuthors().size());
 		request.setAttribute("authors", authorService.getAllAuthors());
@@ -33,13 +31,13 @@ public class AuthorController {
 	}
 	
 	
-	@GetMapping("/new")
+	@GetMapping("/authors/new")
 	public String newAuthor(HttpServletRequest request) {
 		request.setAttribute("mode", "MODE_NEW_AUTHOR");
     	return "index";
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/authors/save")
 	public String saveAuthor(@ModelAttribute Author author, HttpServletRequest request) {
 		authorService.saveAuthor(author);
 		request.setAttribute("authors", authorService.getAllAuthors());
@@ -48,7 +46,7 @@ public class AuthorController {
 	}
 	
 	
-	@GetMapping("/update")
+	@GetMapping("/authors/update")
 	public String updateAuthor(@RequestParam int id, HttpServletRequest request) {
 		request.setAttribute("author", authorService.getOnAuthor(id));
 		request.setAttribute("mode", "MODE_UPDATE_AUTHOR");
@@ -56,7 +54,7 @@ public class AuthorController {
 	}
 
 	
-	@GetMapping("/delete")
+	@GetMapping("/authors/delete")
 	public String deleteAuthor(@RequestParam int id, HttpServletRequest request) {
 		authorService.deleteAuthor(id);
 		request.setAttribute("authors", authorService.getAllAuthors());

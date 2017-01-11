@@ -1,4 +1,3 @@
-DELETE FROM personne;
 DELETE FROM content;
 
 DELETE FROM audio;

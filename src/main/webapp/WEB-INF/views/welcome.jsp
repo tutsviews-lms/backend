@@ -41,7 +41,7 @@
 
 	<div class="container" id="homeDiv">
 		<div class="jumbotron text-center">
-			<h1>Welcome to TutsViews Manager</h1>
+			<h1>Welcome to TutsViews Manageéér</h1>
 		</div>
 	</div>
 	<script src="static/js/jquery-1.11.1.min.js"></script>

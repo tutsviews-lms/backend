@@ -22,6 +22,7 @@ public class CourseController {
 	
 	@Autowired
 	Logger logger;
+	 
 	
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)

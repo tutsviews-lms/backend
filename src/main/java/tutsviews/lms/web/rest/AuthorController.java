@@ -7,11 +7,13 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import scala.annotation.meta.setter;
 import tutsviews.lms.domain.author.Address;
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.service.AuthorService;
@@ -25,11 +27,20 @@ public class AuthorController {
 	@Autowired
 	Logger logger;
 
+//	@GetMapping("/authors")
+//	public String allAuthors(HttpServletRequest request) {
+//		logger.info("Author list size is " + authorService.getAllAuthors().size());
+//		request.setAttribute("authors", authorService.getAllAuthors());
+//		request.setAttribute("mode", "MODE_AUTHORS");
+//    	return "index";
+//	}
+	
+	
 	@GetMapping("/authors")
-	public String allAuthors(HttpServletRequest request) {
+	public String allAuthorsWithModel(Model model) {
 		logger.info("Author list size is " + authorService.getAllAuthors().size());
-		request.setAttribute("authors", authorService.getAllAuthors());
-		request.setAttribute("mode", "MODE_AUTHORS");
+		model.addAttribute("authors", authorService.getAllAuthors());
+		model.addAttribute("mode", "MODE_AUTHORS");
     	return "index";
 	}
 	
@@ -41,8 +52,9 @@ public class AuthorController {
 	}
 	
 	@PostMapping("/authors/save")
-	public String saveAuthor(@ModelAttribute Author author,@ModelAttribute Address address, HttpServletRequest request) {
-		String a = "";
+	public String saveAuthor(@ModelAttribute Author author,@ModelAttribute Address address,
+			HttpServletRequest request) {
+		
 		author.setCreatedAt(new Date());
 		author.setAddress(address);
 		authorService.saveAuthor(author);

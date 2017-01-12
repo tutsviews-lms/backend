@@ -78,6 +78,7 @@
 								<th>Email</th>
 								<th>Mot de passe</th>
 								<th></th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
@@ -89,7 +90,11 @@
 									<td>${author.tel}</td>
 									<td>${author.email}</td>
 									<td>${author.password}</td>
-									<td><a href="/authors/delete?id=${author.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
+									<td><a href="/authors/update?id=${author.id}"><span
+											class="glyphicon glyphicon-pencil"></span></a></td>
+									<td><a href="/authors/delete?id=${author.id}"><span
+											class="glyphicon glyphicon-trash"></span></a></td>
+
 								</tr>
 
 							</c:forEach>
@@ -156,28 +161,28 @@
 						<label class="control-label col-md-3">Voie</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="street"
-								value="${author.state}">
+								value="${address.state}">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Code Zip</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="zipCode"
-								value="${author.zipCode}">
+								value="${address.zip}">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Ville</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="city"
-								value="${author.city}">
+								value="${address.city}">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Pays</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="state"
-								value="${author.state}">
+								value="${address.state}">
 						</div>
 					</div>
 					<div class="form-group">

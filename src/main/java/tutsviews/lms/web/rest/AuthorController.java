@@ -1,10 +1,13 @@
 package tutsviews.lms.web.rest;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +41,9 @@ public class AuthorController {
 	}
 	
 	@PostMapping("/authors/save")
-	public String saveAuthor(@ModelAttribute Author author, HttpServletRequest request) {
+	public String saveAuthor(@ModelAttribute Author author,HttpServletRequest request) {
+		String a = "";
+		author.setCreatedAt(new Date());
 		authorService.saveAuthor(author);
 		request.setAttribute("authors", authorService.getAllAuthors());
 		request.setAttribute("mode", "MODE_AUTHORS");

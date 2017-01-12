@@ -42,7 +42,7 @@
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="/authors">Nos auteurs</a></li>
-					<li><a href="/authors/new">Gestion des auteurs</a></li>
+					<li><a href="/authors/new">Nouveau auteur</a></li>
 				</ul>
 			</div>
 		</div>
@@ -108,7 +108,7 @@
 			<div class="container text-center">
 				<h3>Manage Author</h3>
 				<hr>
-				<form class="form-horizontal" method="POST" action="save-author">
+				<form class="form-horizontal" method="POST" action="save">
 					<input type="hidden" name="id" value="${author.id}" />
 					<div class="form-group">
 						<label class="control-label col-md-3">Non de famille</label>

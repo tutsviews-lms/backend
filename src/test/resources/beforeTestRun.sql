@@ -26,9 +26,13 @@ INSERT INTO `video` VALUES ('2', '2017-01-05 10:58:42', '120', 'video 2', '/reso
 INSERT INTO `author` VALUES ('1', '2017-01-05 11:04:59', 'Montpellier', 'France', 'avenue du professeur louis ravas', '34080', 'le meilleur auteur du monde', 'zaier.alaeddine@gmail.com', 'Alaeddine', 'Zaier', 'coucou', '0652522113', '1');
 INSERT INTO `author` VALUES ('2', '2017-01-05 11:07:01', 'Fontainebleau', 'France', 'chemin des étoiles', '92000', 'auteur très geek', 'houssem.zaier@gmail.com', 'Houssem', 'Zaier', 'coucou', '0781490988', '2');
 INSERT INTO `author` VALUES ('3', '2017-01-05 11:07:01', 'Nabeul', 'Tunisie', 'impasse des lacs', '92000', 'auteur très connu en afrique', 'houssem.zaier@gmail.com', 'Houssem eddine', 'Zaier', 'coucou', '0781490988', '2');
+INSERT INTO `author` VALUES ('4', '2017-01-05 11:07:01', 'Nabeul', 'Tunisie', 'impasse des lacs', '92000', 'aucun livre édité', 'houssem.zaier@gmail.com', 'Refka', 'Zaier', 'coucou', '0781490988', null);
+INSERT INTO `author` VALUES ('5', '2017-01-05 11:07:01', 'Nabeul', 'Tunisie', 'impasse des lacs', '92000', 'auteur très connu en afrique', 'houssem.zaier@gmail.com', 'Duboit', 'F', 'coucou', '0781490988', null);
+INSERT INTO `author` VALUES ('6', '2017-01-05 11:07:01', 'Nabeul', 'Tunisie', 'impasse des lacs', '92000', 'auteur très connu en afrique', 'houssem.zaier@gmail.com', 'Lepaul', 'K', 'coucou', '0781490988', null);
+INSERT INTO `author` VALUES ('7', '2017-01-05 11:07:01', 'Nabeul', 'Tunisie', 'impasse des lacs', '92000', 'auteur très connu en afrique', 'houssem.zaier@gmail.com', 'Duroit', 'O', 'coucou', '0781490988', null);
 
 -- ----------------------------
--- Records of course
+-- Records of cours
 -- ----------------------------
 INSERT INTO `course` VALUES ('1', '2017-01-05 11:12:18', 'cours sur les méthodologies agile', '0', 'Be AGILE', 'Be AGILE with Houssem', '2', '1');
 INSERT INTO `course` VALUES ('2', '2017-01-05 11:12:19', 'Git Advanced and git flow ', '0', 'Git Advanced', 'Git So Easy', '1', '2');

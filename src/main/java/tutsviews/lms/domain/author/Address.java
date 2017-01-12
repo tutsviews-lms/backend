@@ -15,8 +15,7 @@ public class Address {
     
     private String state;
     
-    @Column(name="ZIP_CODE")
-    private String zip;
+    private String zipCode;
 
 	public String getStreet() {
 		return street;
@@ -42,12 +41,13 @@ public class Address {
 		this.state = state;
 	}
 
-	public String getZip() {
-		return zip;
+
+	public String getZipCode() {
+		return zipCode;
 	}
 
-	public void setZip(String zip) {
-		this.zip = zip;
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 
 	public Address() {

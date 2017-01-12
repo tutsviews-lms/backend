@@ -168,7 +168,7 @@
 						<label class="control-label col-md-3">Code Zip</label>
 						<div class="col-md-7">
 							<input type="text" class="form-control" name="zipCode"
-								value="${address.zip}">
+								value="${address.zipCode}">
 						</div>
 					</div>
 					<div class="form-group">

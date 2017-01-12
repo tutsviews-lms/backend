@@ -132,7 +132,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-3">Description</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="description"
+							<input type="text" class="form-control" name="description" 
 								value="${author.description}">
 						</div>
 					</div>
@@ -146,14 +146,14 @@
 					<div class="form-group">
 						<label class="control-label col-md-3">Adresse mail</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
+							<input type="email" class="form-control" name="email"
 								value="${author.email}">
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Mot de passe</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="password"
+							<input type="password" class="form-control" name="password"
 								value="${author.password}">
 						</div>
 					</div>

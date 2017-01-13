@@ -136,14 +136,15 @@
 						</div>
 					</div>
 					
-					
+
 					<div class="form-group">
-						<label class="control-label col-md-3">Téléphone</label>
+						<label for="author-tel" class="control-label col-md-3" >Téléphone</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="tel"
-								value="${author.tel}">
+						<form:input path="tel" cssClass="form-control" id="author-tel"/>
 						</div>
 					</div>
+										
+					
 					<div class="form-group">
 						<label class="control-label col-md-3">Adresse mail</label>
 						<div class="col-md-7">

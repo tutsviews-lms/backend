@@ -109,29 +109,34 @@
 				
 				<form:form action="${formUrl}" method="POST" modelAttribute="author" cssClass="form-horizontal">
 				
-<%-- 				<form class="form-horizontal" method="POST" action="save"> --%>
+				
 					<input type="hidden" name="id" value="${author.id}" />
+					
 					<div class="form-group">
-						<label class="control-label col-md-3">Non de famille</label>
+					
+						<label for="author-last-name" class="control-label col-md-3">Non de famille</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="lastName"
-								value="${author.lastName}">
+						<form:input path="lastName" cssClass="form-control" id="author-last-name"/>
+						</div>
+							
+					</div>
+					
+					
+					<div class="form-group">
+						<label for="author-first-name" class="control-label col-md-3" >Prénom</label>
+						<div class="col-md-7">
+						<form:input path="firstName" cssClass="form-control" id="author-first-name"/>
 						</div>
 					</div>
+					
 					<div class="form-group">
-						<label class="control-label col-md-3">Prénom</label>
+						<label for="author-description" class="control-label col-md-3" >Description</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="firstName"
-								value="${author.firstName}">
+						<form:input path="description" cssClass="form-control" id="author-description"/>
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Description</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="description"
-								value="${author.description}">
-						</div>
-					</div>
+					
+					
 					<div class="form-group">
 						<label class="control-label col-md-3">Téléphone</label>
 						<div class="col-md-7">

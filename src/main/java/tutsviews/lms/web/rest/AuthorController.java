@@ -51,11 +51,10 @@ public class AuthorController {
 	}
 	
 	@PostMapping("/authors/save")
-	public String saveAuthor(@ModelAttribute Author author,@ModelAttribute Address address,
+	public String saveAuthor(@ModelAttribute Author author,
 			HttpServletRequest request) {
-		
+		System.out.println(author);
 		author.setCreatedAt(new Date());
-		author.setAddress(address);
 		authorService.saveAuthor(author);
 		request.setAttribute("authors", authorService.getAllAuthors());
 		request.setAttribute("mode", "MODE_AUTHORS");

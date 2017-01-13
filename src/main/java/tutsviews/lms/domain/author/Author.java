@@ -131,6 +131,30 @@ public class Author extends AbstractEntity {
 		this.image = image;
 	}
 
+	public Author(String lastName, String firstName, String description, String email, String password, Address address,
+			String tel, List<Course> courses, Image image) {
+		super();
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.description = description;
+		this.email = email;
+		this.password = password;
+		this.address = address;
+		this.tel = tel;
+		this.courses = courses;
+		this.image = image;
+	}
+
+	@Override
+	public String toString() {
+		return "Author [lastName=" + lastName + ", firstName=" + firstName + ", description=" + description + ", email="
+				+ email + ", password=" + password + ", address=" + address + ", tel=" + tel + ", courses=" + courses
+				+ ", image=" + image + "]";
+	}
+
+	
+	
+
 	
 	
 

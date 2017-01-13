@@ -1,12 +1,9 @@
 package tutsviews.lms.domain.author;
 
-import javax.persistence.Access; 
-import javax.persistence.AccessType;
-import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 
-@Embeddable @Access(AccessType.FIELD)
+@Embeddable 
 public class Address {
 	
     private String street; 
@@ -53,7 +50,21 @@ public class Address {
 	public Address() {
 		super();
 	}
+
+	public Address(String street, String city, String state, String zipCode) {
+		super();
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.zipCode = zipCode;
+	}
+
+	@Override
+	public String toString() {
+		return "Address [street=" + street + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + "]";
+	}
     
     
+	
     
 }

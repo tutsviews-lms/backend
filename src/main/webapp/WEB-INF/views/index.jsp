@@ -2,8 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"  %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -43,11 +43,11 @@
 	<c:choose>
 		<c:when test="${mode == 'MODE_HOME'}">
 
-<!-- 			<div class="container" id="homeDiv"> -->
-<!-- 				<div class="jumbotron text-center"> -->
-<!-- 					<h1>Welcome to TutsViews Manager</h1> -->
-<!-- 				</div> -->
-<!-- 			</div> -->
+			<!-- 			<div class="container" id="homeDiv"> -->
+			<!-- 				<div class="jumbotron text-center"> -->
+			<!-- 					<h1>Welcome to TutsViews Manager</h1> -->
+			<!-- 				</div> -->
+			<!-- 			</div> -->
 
 		</c:when>
 	</c:choose>
@@ -104,82 +104,98 @@
 			<div class="container text-center">
 				<h3>Gestion d'un auteur</h3>
 				<hr>
-				
-				<spring:url value="/authors/save" var="formUrl"/> 
-				
-				<form:form action="${formUrl}" method="POST" modelAttribute="author" cssClass="form-horizontal">
-				
-				
-					<input type="hidden" name="id" value="${author.id}" />
-					
-					<div class="form-group">
-					
-						<label for="author-last-name" class="control-label col-md-3">Non de famille</label>
-						<div class="col-md-7">
-						<form:input path="lastName" cssClass="form-control" id="author-last-name"/>
-						</div>
-							
-					</div>
-					
-					
-					<div class="form-group">
-						<label for="author-first-name" class="control-label col-md-3" >Prénom</label>
-						<div class="col-md-7">
-						<form:input path="firstName" cssClass="form-control" id="author-first-name"/>
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<label for="author-description" class="control-label col-md-3" >Description</label>
-						<div class="col-md-7">
-						<form:input path="description" cssClass="form-control" id="author-description"/>
-						</div>
-					</div>
-					
+
+				<spring:url value="/authors/save" var="formUrl" />
+
+				<form:form action="${formUrl}" method="POST" modelAttribute="author"
+					cssClass="form-horizontal">
+
+
+					<form:input type="hidden" id="author-id" path="id" />
 
 					<div class="form-group">
-						<label for="author-tel" class="control-label col-md-3" >Téléphone</label>
+
+						<label for="author-last-name" class="control-label col-md-3">Non
+							de famille</label>
 						<div class="col-md-7">
-						<form:input path="tel" cssClass="form-control" id="author-tel"/>
+							<form:input path="lastName" cssClass="form-control"
+								id="author-last-name" />
+						</div>
+
+					</div>
+
+
+					<div class="form-group">
+						<label for="author-first-name" class="control-label col-md-3">Prénom</label>
+						<div class="col-md-7">
+							<form:input path="firstName" cssClass="form-control"
+								id="author-first-name" />
 						</div>
 					</div>
-										
+
+					<div class="form-group">
+						<label for="author-description" class="control-label col-md-3">Description</label>
+						<div class="col-md-7">
+							<form:textarea path="description" cssClass="form-control"
+								id="author-description" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="author-tel" class="control-label col-md-3">Téléphone</label>
+						<div class="col-md-7">
+							<form:input path="tel" cssClass="form-control" id="author-tel" />
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="author-email" class="control-label col-md-3">Adresse
+							email</label>
+						<div class="col-md-7">
+							<form:input path="email" type="email" cssClass="form-control"
+								id="author-email" />
+							<small id="emailHelp" class="form-text text-muted">Nous
+								ne partagerons jamais votre email avec personne.</small>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="author-password" class="control-label col-md-3">Mot
+							de passe</label>
+						<div class="col-md-7">
+							<form:input path="password" type="password"
+								cssClass="form-control" id="author-password" />
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="author-address-street" class="control-label col-md-3">Adresse</label>
+						<div class="col-md-7">
+							<form:input path="address.street" type="text"
+								cssClass="form-control" id="author-address-street" /> 
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="author-address-zip" class="control-label col-md-3">Code Postal</label>
+						<div class="col-md-7">
+							<form:input path="zipCode" type="text"
+								cssClass="form-control" id="author-address-zip" /> 
+						</div>
+					</div>
+
 					
 					<div class="form-group">
-						<label class="control-label col-md-3">Adresse mail</label>
+						<label for="author-address-city" class="control-label col-md-3">Ville</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="email"
-								value="${author.email}">
+							<form:input path="city" type="text"
+								cssClass="form-control" id="author-address-city" /> 
 						</div>
 					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Mot de passe</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="password"
-								value="${author.password}">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Voie</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="street"
-								value="${address.state}">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Code Zip</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="zipCode"
-								value="${address.zipCode}">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="control-label col-md-3">Ville</label>
-						<div class="col-md-7">
-							<input type="text" class="form-control" name="city"
-								value="${address.city}">
-						</div>
-					</div>
+					
 					<div class="form-group">
 						<label class="control-label col-md-3">Pays</label>
 						<div class="col-md-7">
@@ -190,10 +206,10 @@
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Enregistrer">
 					</div>
-				
+
 				</form:form>
-				
-				
+
+
 			</div>
 		</c:when>
 	</c:choose>
@@ -206,11 +222,13 @@
 
 
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script
+		src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-<!-- 	<script src="static/js/jquery-1.11.1.min.js"></script> -->
-<!-- 	<script src="static/js/bootstrap.min.js"></script> -->
+	<!-- 	<script src="static/js/jquery-1.11.1.min.js"></script> -->
+	<!-- 	<script src="static/js/bootstrap.min.js"></script> -->
 
 </body>
 </html>

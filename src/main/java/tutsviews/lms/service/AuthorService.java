@@ -8,7 +8,7 @@ public interface AuthorService {
 
 	List<Author> getAllAuthors();
 	
-	Author getOnAuthor(int id);
+	Author getOneAuthor(int id);
 	
 	void deleteAuthor(int id);
 	

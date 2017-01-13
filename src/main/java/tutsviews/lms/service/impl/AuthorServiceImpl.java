@@ -20,7 +20,7 @@ public class AuthorServiceImpl implements AuthorService {
 		return authorRepository.findAll();
 	}
 
-	public Author getOnAuthor(int id) {
+	public Author getOneAuthor(int id) {
 		return authorRepository.findOne((long) id);
 	}
 

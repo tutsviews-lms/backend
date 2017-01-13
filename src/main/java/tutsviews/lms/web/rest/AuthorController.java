@@ -1,6 +1,7 @@
 package tutsviews.lms.web.rest;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,13 +13,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
-import scala.annotation.meta.setter;
-import tutsviews.lms.domain.author.Address;
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.service.AuthorService;
 
 @Controller
+@SessionAttributes("author")
 public class AuthorController {
 
 	@Autowired
@@ -27,44 +29,45 @@ public class AuthorController {
 	@Autowired
 	Logger logger;
 
-//	@GetMapping("/authors")
-//	public String allAuthors(HttpServletRequest request) {
-//		logger.info("Author list size is " + authorService.getAllAuthors().size());
-//		request.setAttribute("authors", authorService.getAllAuthors());
-//		request.setAttribute("mode", "MODE_AUTHORS");
-//    	return "index";
-//	}
 	
+	@ModelAttribute("author")
+	public Author getAuthor(){
+		return new Author();
+	}
+	
+	@ModelAttribute("authors")
+	public List<Author> getAuthors(){
+		return authorService.getAllAuthors();
+	}
 	
 	@GetMapping("/authors")
 	public String allAuthorsWithModel(Model model) {
 		logger.info("Author list size is " + authorService.getAllAuthors().size());
-		model.addAttribute("authors", authorService.getAllAuthors());
 		model.addAttribute("mode", "MODE_AUTHORS");
     	return "index";
 	}
 	
 	@GetMapping("/authors/add")	public String addAuthor(Model model) {
 		model.addAttribute("mode", "MODE_NEW_AUTHOR");
-		model.addAttribute("author", new Author());
     	return "index";
 	}
 	
 	@PostMapping("/authors/save")
 	public String saveAuthor(@ModelAttribute Author author,
-			HttpServletRequest request) {
-		System.out.println(author);
+			HttpServletRequest request, SessionStatus status) {
 		author.setCreatedAt(new Date());
 		authorService.saveAuthor(author);
 		request.setAttribute("authors", authorService.getAllAuthors());
 		request.setAttribute("mode", "MODE_AUTHORS");
-    	return "index";
+		status.setComplete();
+    	return "redirect:/authors";
 	}
 	
+
 	
 	@GetMapping("/authors/update")
 	public String updateAuthor(@RequestParam int id, HttpServletRequest request) {
-		request.setAttribute("author", authorService.getOnAuthor(id));
+		request.setAttribute("author", authorService.getOneAuthor(id));
 		request.setAttribute("mode", "MODE_UPDATE_AUTHOR");
     	return "index";
 	}
@@ -73,9 +76,8 @@ public class AuthorController {
 	@GetMapping("/authors/delete")
 	public String deleteAuthor(@RequestParam int id, HttpServletRequest request) {
 		authorService.deleteAuthor(id);
-		request.setAttribute("authors", authorService.getAllAuthors());
 		request.setAttribute("mode", "MODE_AUTHORS");
-    	return "index";
+    	return "redirect:/authors";
 	}
 
 }

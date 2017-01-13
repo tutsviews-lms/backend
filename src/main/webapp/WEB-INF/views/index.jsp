@@ -182,7 +182,7 @@
 					<div class="form-group">
 						<label for="author-address-zip" class="control-label col-md-3">Code Postal</label>
 						<div class="col-md-7">
-							<form:input path="zipCode" type="text"
+							<form:input path="address.zipCode" type="text"
 								cssClass="form-control" id="author-address-zip" /> 
 						</div>
 					</div>
@@ -191,22 +191,22 @@
 					<div class="form-group">
 						<label for="author-address-city" class="control-label col-md-3">Ville</label>
 						<div class="col-md-7">
-							<form:input path="city" type="text"
+							<form:input path="address.city" type="text"
 								cssClass="form-control" id="author-address-city" /> 
 						</div>
 					</div>
 					
 					<div class="form-group">
-						<label class="control-label col-md-3">Pays</label>
+						<label for="author-address-state" class="control-label col-md-3">Pays</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="state"
-								value="${address.state}">
+							<form:input path="address.state" type="text"
+								cssClass="form-control" id="author-address-state" /> 
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Enregistrer">
 					</div>
-
 				</form:form>
 
 

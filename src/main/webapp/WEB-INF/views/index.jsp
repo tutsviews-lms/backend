@@ -137,7 +137,7 @@
 						<label for="author-description" class="control-label col-md-3">Description</label>
 						<div class="col-md-7">
 							<form:textarea path="description" cssClass="form-control"
-								id="author-description" />
+								id="author-description" rows="2" />
 						</div>
 					</div>
 

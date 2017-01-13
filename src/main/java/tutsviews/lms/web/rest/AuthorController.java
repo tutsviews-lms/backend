@@ -44,8 +44,9 @@ public class AuthorController {
     	return "index";
 	}
 	
-	@GetMapping("/authors/new")	public String newAuthor(HttpServletRequest request) {
-		request.setAttribute("mode", "MODE_NEW_AUTHOR");
+	@GetMapping("/authors/add")	public String addAuthor(Model model) {
+		model.addAttribute("mode", "MODE_NEW_AUTHOR");
+		model.addAttribute("author", new Author());
     	return "index";
 	}
 	

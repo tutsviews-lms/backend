@@ -2,7 +2,8 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"  %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
@@ -36,27 +37,17 @@
 
 <body>
 
-	<div role="navigation">
-		<div class="navbar navbar-inverse">
-			<a href="/" class="navbar-brand">TutsViews</a>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="/authors">Nos auteurs</a></li>
-					<li><a href="/authors/new">Nouveau auteur</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
 
+	<jsp:include page="../views/fragments/header.jsp"></jsp:include>
 
 	<c:choose>
 		<c:when test="${mode == 'MODE_HOME'}">
 
-			<div class="container" id="homeDiv">
-				<div class="jumbotron text-center">
-					<h1>Welcome to TutsViews Manager</h1>
-				</div>
-			</div>
+<!-- 			<div class="container" id="homeDiv"> -->
+<!-- 				<div class="jumbotron text-center"> -->
+<!-- 					<h1>Welcome to TutsViews Manager</h1> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 
 		</c:when>
 	</c:choose>
@@ -65,7 +56,7 @@
 		<c:when test="${mode == 'MODE_AUTHORS'}">
 
 			<div class="container text-center " id="authorsDiv">
-				<h3>Tustsviews Authors</h3>
+				<h3>Tustsviews : Tous nos auteurs</h3>
 				<hr>
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered text-left">
@@ -111,9 +102,14 @@
 			test="${mode == 'MODE_NEW_AUTHOR' || mode == 'MODE_UPDATE_AUTHOR'}">
 
 			<div class="container text-center">
-				<h3>Manage Author</h3>
+				<h3>Gestion d'un auteur</h3>
 				<hr>
-				<form class="form-horizontal" method="POST" action="save">
+				
+				<spring:url value="/authors/save" var="formUrl"/>
+				
+				<form:form action="${formUrl}" method="POST" modelAttribute="author" cssClass="form-horizontal">
+				
+<%-- 				<form class="form-horizontal" method="POST" action="save"> --%>
 					<input type="hidden" name="id" value="${author.id}" />
 					<div class="form-group">
 						<label class="control-label col-md-3">Non de famille</label>
@@ -188,7 +184,10 @@
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Enregistrer">
 					</div>
-				</form>
+				
+				</form:form>
+				
+				
 			</div>
 		</c:when>
 	</c:choose>
@@ -201,10 +200,11 @@
 
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
-
-	<script src="static/js/jquery-1.11.1.min.js"></script>
-	<script src="static/js/bootstrap.min.js"></script>
+<!-- 	<script src="static/js/jquery-1.11.1.min.js"></script> -->
+<!-- 	<script src="static/js/bootstrap.min.js"></script> -->
 
 </body>
 </html>

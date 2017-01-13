@@ -105,7 +105,7 @@
 				<h3>Gestion d'un auteur</h3>
 				<hr>
 				
-				<spring:url value="/authors/save" var="formUrl"/>
+				<spring:url value="/authors/save" var="formUrl"/> 
 				
 				<form:form action="${formUrl}" method="POST" modelAttribute="author" cssClass="form-horizontal">
 				

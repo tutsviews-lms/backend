@@ -11,12 +11,8 @@ import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import tutsviews.lms.domain.course.Course;
 import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.util.AbstractEntity;
@@ -27,10 +23,10 @@ public class Author extends AbstractEntity {
 	
 	private static final long serialVersionUID = 1L;
 
-	@NotNull
+	@NotBlank(message="Le Nom est obligatire.")
 	private String lastName;
 
-	@NotNull
+	@NotBlank(message="Le prénom est obligatoire.")
 	private String firstName;
 
 	@Column(length = 5000)

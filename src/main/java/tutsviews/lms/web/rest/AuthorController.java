@@ -10,7 +10,7 @@ import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -58,11 +58,13 @@ public class AuthorController {
 	}
 	
 	@PostMapping("/authors/save")
-	public String saveAuthor (@Valid @ModelAttribute Author author,
-			HttpServletRequest request, SessionStatus status, Errors errors) {
+	public String saveAuthor (@Valid @ModelAttribute Author author,BindingResult result ,
+			HttpServletRequest request, SessionStatus status) {
 		
-		if (errors.hasErrors()) {
+		if (result.hasErrors()) {
 			System.out.println("Il ya des ereeeeeeurs!!!!");
+			request.setAttribute("mode", "MODE_NEW_AUTHOR");
+	    	return "index";
 		}else {
 			System.out.println("No errors No errors No errors No errors ");
 

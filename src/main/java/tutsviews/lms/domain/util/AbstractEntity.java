@@ -24,7 +24,6 @@ public abstract class AbstractEntity  implements Serializable  {
 	private Long id;
 
 	@JsonIgnore
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false,columnDefinition="TIMESTAMP default CURRENT_TIMESTAMP")
 	private Date createdAt;

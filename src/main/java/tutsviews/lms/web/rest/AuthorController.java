@@ -69,6 +69,7 @@ public class AuthorController {
 	public String saveAuthor (@Valid @ModelAttribute Author author,BindingResult result ,
 			HttpServletRequest request, SessionStatus status) {
 		
+	
 		if (result.hasErrors()) {
 			System.out.println("Il ya des ereeeeeeurs!!!!");
 			request.setAttribute("mode", "MODE_NEW_AUTHOR");

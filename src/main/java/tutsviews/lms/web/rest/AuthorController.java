@@ -6,12 +6,14 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+import org.mockito.internal.stubbing.answers.ThrowsException;
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -43,6 +45,12 @@ public class AuthorController {
 	@ModelAttribute("authors")
 	public List<Author> getAuthors(){
 		return authorService.getAllAuthors();
+	}
+	
+	
+	@ExceptionHandler(Exception.class)
+	public String handelError(){
+		return("controller_error");
 	}
 	
 	@GetMapping("/authors")

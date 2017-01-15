@@ -46,11 +46,7 @@ public class AuthorController {
 		return authorService.getAllAuthors();
 	}
 	
-	
-	@ExceptionHandler(Exception.class)
-	public String handelError(){
-		return("controller_error");
-	}
+
 	
 	@GetMapping("/authors")
 	public String allAuthorsWithModel(Model model) {
@@ -70,12 +66,8 @@ public class AuthorController {
 		
 	
 		if (result.hasErrors()) {
-			System.out.println("Il ya des ereeeeeeurs!!!!");
 			request.setAttribute("mode", "MODE_NEW_AUTHOR");
 	    	return "index";
-		}else {
-			System.out.println("No errors No errors No errors No errors ");
-
 		}
 		
 		author.setCreatedAt(new Date());

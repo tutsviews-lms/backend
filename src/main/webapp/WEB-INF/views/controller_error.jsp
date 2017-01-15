@@ -36,7 +36,11 @@
 
 	<div class="container">
 	<h4>Une erreur s'est produite et a été géré dans un controller par une hnadler méthode annotée avec @ExceptionHandler.</h4>
+	<b>${name}</b>:  ${message}
 	</div>
+
+	
+
 
 
 

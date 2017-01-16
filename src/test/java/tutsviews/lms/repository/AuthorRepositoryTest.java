@@ -22,7 +22,6 @@ import tutsviews.lms.domain.author.Author;
 
 
 
-@Transactional
 public class AuthorRepositoryTest extends AbstractTest{
 
 	

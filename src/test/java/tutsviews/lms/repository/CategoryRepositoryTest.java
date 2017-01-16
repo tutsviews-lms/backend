@@ -17,7 +17,6 @@ import tutsviews.lms.domain.course.Category;
 
 
 
-@Transactional
 public class CategoryRepositoryTest extends AbstractTest {
 
 	

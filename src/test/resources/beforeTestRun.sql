@@ -44,6 +44,9 @@ INSERT INTO `author` VALUES ('18', '2017-01-13 14:02:43', 'paris', 'france', 'av
 -- ----------------------------
 INSERT INTO `course` VALUES ('1', '2017-01-16 15:39:50', 'Cours Très intéressant', 'MEDIUM',TRUE, 'Scrum with Houssem', 'Be Agile', '1', '1');
 INSERT INTO `course` VALUES ('2', '2017-01-16 15:41:08', 'Git Advanced and git flow ', 'EASY',TRUE, 'Git with Alaeddine', 'Git', '2', '2');
+INSERT INTO `course` VALUES ('3', '2017-01-16 15:41:08', 'Git Bisics for begginers', 'MEDIUM',TRUE, 'Git forever', 'Git Basics', '2', '2');
+INSERT INTO `course` VALUES ('4', '2017-01-16 15:41:08', 'Git Bisics for begginers', 'MEDIUM',TRUE, 'Git forever', 'Git Basics', '2', '2');
+
 -- ----------------------------
 -- Records of section
 -- ----------------------------

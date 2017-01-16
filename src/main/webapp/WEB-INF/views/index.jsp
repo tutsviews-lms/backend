@@ -105,7 +105,7 @@
 				<h3>Gestion d'un auteur</h3>
 				<hr>
 				
-					<jsp:include page="../views/fragments/add_user.jsp"></jsp:include>
+					<jsp:include page="../views/fragments/add_author.jsp"></jsp:include>
 					
 				
 					

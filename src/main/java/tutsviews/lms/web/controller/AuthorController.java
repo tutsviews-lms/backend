@@ -77,12 +77,13 @@ public class AuthorController {
     	return "redirect:/authors";
 	}
 	
-
+	
+	
 	
 	@GetMapping("/authors/update")
-	public String updateAuthor(@RequestParam int id, HttpServletRequest request) {
-		request.setAttribute("author", authorService.getOneAuthor(id));
-		request.setAttribute("mode", "MODE_UPDATE_AUTHOR");
+	public String updateAuthor(@RequestParam int id, Model model) {
+		model.addAttribute("author", authorService.getOneAuthor(id));
+		model.addAttribute("mode", "MODE_UPDATE_AUTHOR");
     	return "index";
 	}
 
@@ -94,6 +95,8 @@ public class AuthorController {
     	return "redirect:/authors";
 	}
 
+	
+	
 	@InitBinder
 	public void initBinder(WebDataBinder binder){
 		binder.addValidators(new AuthorValidator());

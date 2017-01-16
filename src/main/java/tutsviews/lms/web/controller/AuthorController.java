@@ -51,13 +51,13 @@ public class AuthorController {
 	public String allAuthors(Model model) {
 		logger.info("Author list size is " + authorService.getAllAuthors().size());
 		model.addAttribute("mode", "MODE_AUTHORS");
-    	return "index";
+    	return "authors";
 	}
 	
 	@GetMapping("/authors/add")	
 	public String addAuthor(Model model) {
 		model.addAttribute("mode", "MODE_NEW_AUTHOR");
-    	return "index";
+    	return "authors";
 	}
 	
 	@PostMapping("/authors/save")
@@ -66,7 +66,7 @@ public class AuthorController {
 	
 		if (result.hasErrors()) {
 			request.setAttribute("mode", "MODE_NEW_AUTHOR");
-	    	return "index";
+	    	return "authors";
 		}
 		
 		author.setCreatedAt(new Date());
@@ -84,7 +84,7 @@ public class AuthorController {
 	public String updateAuthor(@RequestParam int id, Model model) {
 		model.addAttribute("author", authorService.getOneAuthor(id));
 		model.addAttribute("mode", "MODE_UPDATE_AUTHOR");
-    	return "index";
+    	return "authors";
 	}
 
 	
@@ -101,4 +101,6 @@ public class AuthorController {
 	public void initBinder(WebDataBinder binder){
 		binder.addValidators(new AuthorValidator());
 	}
+	
+	
 }

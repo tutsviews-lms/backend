@@ -30,7 +30,7 @@
 <body>
 
 
-	<jsp:include page="../views/fragments/header.jsp"></jsp:include>
+	<jsp:include page="../views/components/header.jsp"></jsp:include>
 
 
 

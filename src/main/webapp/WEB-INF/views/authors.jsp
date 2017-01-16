@@ -47,9 +47,14 @@
 								<th>Id</th>
 								<th>Nom</th>
 								<th>Prénom</th>
+								<th>Description</th>
 								<th>Tel</th>
 								<th>Email</th>
 								<th>Mot de passe</th>
+								<th>Adresse</th>
+								<th>Code Postal</th>
+								<th>Ville</th>
+								<th>Pays</th>
 								<th></th>
 								<th></th>
 							</tr>
@@ -60,9 +65,14 @@
 									<td>${author.id}</td>
 									<td>${author.lastName}</td>
 									<td>${author.firstName}</td>
+									<td>${author.description}</td>
 									<td>${author.tel}</td>
 									<td>${author.email}</td>
 									<td>${author.password}</td>
+									<td>${author.address.street}</td>
+									<td>${author.address.zipCode}</td>
+									<td>${author.address.city}</td>
+									<td>${author.address.state}</td>
 									<td><a href="/authors/update?id=${author.id}"><span
 											class="glyphicon glyphicon-pencil"></span></a></td>
 									<td><a href="/authors/delete?id=${author.id}"><span

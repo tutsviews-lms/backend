@@ -23,7 +23,7 @@
 		<div class="col-md-7">
 			<form:input path="lastName" cssClass="form-control"
 				id="author-last-name" />
-			<form:errors path="lastName"/>
+			<form:errors path="lastName" />
 		</div>
 
 	</div>
@@ -34,8 +34,8 @@
 		<div class="col-md-7">
 			<form:input path="firstName" cssClass="form-control"
 				id="author-first-name" />
-			<form:errors path="firstName"/>
-			
+			<form:errors path="firstName" />
+
 		</div>
 	</div>
 
@@ -72,7 +72,7 @@
 		<div class="col-md-7">
 			<form:input path="password" type="password" cssClass="form-control"
 				id="author-password" />
-			<form:errors path="password"/>
+			<form:errors path="password" />
 		</div>
 	</div>
 
@@ -117,3 +117,17 @@
 	</div>
 </form:form>
 
+<br>
+<hr>
+<br>
+
+<spring:url value="/resource/upload" var="uploadUrl" />
+<form method="POST" enctype="multipart/form-data" action="${uploadUrl}" class="form-horizontal">
+Fichier à télécharger: 
+<div class="form-group">
+<input type="file" name="file"><br>
+</div>
+<div class="form-group">
+<input type="submit" value="Télécharger"> Appuiyez ici pour télécharger le fichier.
+</div>
+</form>

@@ -106,7 +106,9 @@
 				<hr>
 				
 					<jsp:include page="../views/fragments/add_user.jsp"></jsp:include>
-
+					
+				
+					
 			</div>
 		</c:when>
 	</c:choose>

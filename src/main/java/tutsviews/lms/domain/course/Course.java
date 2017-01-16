@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -16,6 +18,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.util.AbstractEntity;
+import tutsviews.lms.domain.util.DifficultyType;
 
 @Entity
 public class Course extends AbstractEntity {
@@ -28,6 +31,9 @@ public class Course extends AbstractEntity {
 	@NotNull
 	private String titleCourse;
 	
+	@NotNull
+	@Enumerated(EnumType.STRING)
+	private DifficultyType difficultyType;
 	
 	@JoinTable(name="course_category")
 	@ManyToMany
@@ -37,9 +43,6 @@ public class Course extends AbstractEntity {
 	@ManyToOne
 	private Author author;
 	
-	@NotNull
-	private boolean isFree;
-	
 	private String description;
 	
 	@OneToOne(cascade = CascadeType.ALL)
@@ -48,6 +51,16 @@ public class Course extends AbstractEntity {
 	@OneToMany( cascade = CascadeType.ALL,mappedBy = "course")
 	private List<Section> sections;
 	
+	@NotNull
+	private boolean isFree;
+
+	public boolean isFree() {
+		return isFree;
+	}
+
+	public void setFree(boolean isFree) {
+		this.isFree = isFree;
+	}
 
 	public String getNameCourse() {
 		return nameCourse;
@@ -81,13 +94,6 @@ public class Course extends AbstractEntity {
 		this.author = author;
 	}
 
-	public boolean isFree() {
-		return isFree;
-	}
-
-	public void setFree(boolean isFree) {
-		this.isFree = isFree;
-	}
 
 	public String getDescription() {
 		return description;
@@ -113,7 +119,13 @@ public class Course extends AbstractEntity {
 		this.sections = sections;
 	}
 
+	public DifficultyType getDifficultyType() {
+		return difficultyType;
+	}
 
+	public void setDifficultyType(DifficultyType difficultyType) {
+		this.difficultyType = difficultyType;
+	}
 
 	public Course() {
 		super();

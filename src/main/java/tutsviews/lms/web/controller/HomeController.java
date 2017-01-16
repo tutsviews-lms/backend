@@ -14,9 +14,6 @@ public class HomeController {
     
 	
 	@Autowired
-	AuthorService authorService;
-
-	@Autowired
 	Logger logger;
 
     @GetMapping("/")

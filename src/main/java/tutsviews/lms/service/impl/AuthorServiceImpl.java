@@ -16,7 +16,6 @@ public class AuthorServiceImpl implements AuthorService {
 	AuthorRepository authorRepository;
 
 	public List<Author> getAllAuthors() {
-
 		return authorRepository.findAll();
 	}
 

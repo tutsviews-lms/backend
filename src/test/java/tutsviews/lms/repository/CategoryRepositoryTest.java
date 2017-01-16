@@ -1,6 +1,6 @@
 package tutsviews.lms.repository;
 
-import static org.hamcrest.Matchers.allOf;
+import static org.hamcrest.Matchers.allOf; 
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasProperty;
 import static org.hamcrest.Matchers.is;
@@ -10,9 +10,6 @@ import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.jdbc.Sql;
-import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.transaction.annotation.Transactional;
 
 import tutsviews.lms.AbstractTest;

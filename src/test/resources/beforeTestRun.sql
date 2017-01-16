@@ -40,11 +40,10 @@ INSERT INTO `author` VALUES ('16', '2017-01-12 14:00:39', 'paris', 'france', 'av
 INSERT INTO `author` VALUES ('17', '2017-01-13 12:13:44', 'paris', 'france', 'avenue de lavenue', '34000', 'zz', 'hou.za@gmail.com', 'kerchou bel 3sal', 'Bhim', 'ya za77i', '0652522113', null);
 INSERT INTO `author` VALUES ('18', '2017-01-13 14:02:43', 'paris', 'france', 'avenue de lavenue', '34000', 'sans decription', 'hou.za@gmail.com', 'moto', 'hello', 'hello moto', '0652522113', null);
 -- ----------------------------
--- Records of cours
+-- Records of courses
 -- ----------------------------
-INSERT INTO `course` VALUES ('1', '2017-01-05 11:12:18', 'cours sur les méthodologies agile', '0', 'Be AGILE', 'Be AGILE with Houssem', '2', '1');
-INSERT INTO `course` VALUES ('2', '2017-01-05 11:12:19', 'Git Advanced and git flow ', '0', 'Git Advanced', 'Git So Easy', '1', '2');
-
+INSERT INTO `course` VALUES ('1', '2017-01-16 15:39:50', 'Cours Très intéressant', 'MEDIUM',TRUE, 'Scrum with Houssem', 'Be Agile', '1', '1');
+INSERT INTO `course` VALUES ('2', '2017-01-16 15:41:08', 'Git Advanced and git flow ', 'EASY',TRUE, 'Git with Alaeddine', 'Git', '2', '2');
 -- ----------------------------
 -- Records of section
 -- ----------------------------

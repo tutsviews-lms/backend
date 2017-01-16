@@ -15,6 +15,7 @@ public class CourseServiceImpl implements CourseService {
 	@Autowired
 	CourseRepository courseRepository;
 
+	
 	public List<Course> getAllCourses() {
 		return courseRepository.findAll();
 	}

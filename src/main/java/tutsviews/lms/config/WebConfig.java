@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import tutsviews.lms.web.rest.data.HitCounter;
-import tutsviews.lms.web.rest.interceptors.GlobalInterceptor;
+import tutsviews.lms.web.controller.data.HitCounter;
+import tutsviews.lms.web.controller.interceptors.GlobalInterceptor;
 
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {

@@ -17,7 +17,6 @@
 	<form:input type="hidden" id="author-id" path="id" />
 
 	<div class="form-group">
-
 		<label for="author-last-name" class="control-label col-md-3">Non
 			de famille</label>
 		<div class="col-md-7">
@@ -25,7 +24,6 @@
 				id="author-last-name" />
 			<form:errors path="lastName" />
 		</div>
-
 	</div>
 
 

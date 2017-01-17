@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import tutsviews.lms.domain.course.Course;
-import tutsviews.lms.service.AuthorService;
 import tutsviews.lms.service.CourseService;
 
 @Controller
@@ -26,16 +25,16 @@ public class CourseController {
 	
 	@GetMapping("/courses")
 	public String getAllCourses(Model model){
+		System.out.println(courseService.getAllCourses().get(0));
 		model.addAttribute("mode", "MODE_COURSES");
-//		model.addAttribute("courses",courseService.getAllCourses());
-		System.out.println(courseService.getAllCourses().size());
+		model.addAttribute("courses",courseService.getAllCourses());
 
 	return "courses";
 	}
 
 	
 	@GetMapping("/courses/add")
-	public String addCourse(Model model ){
+	public String addCourse(Model model, @ModelAttribute Course course ){
 		model.addAttribute("mode", "MODE_NEW_COURSE");
 	return "courses";
 	}

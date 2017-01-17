@@ -13,6 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import tutsviews.lms.domain.author.Author;
@@ -28,12 +30,12 @@ public class Course extends AbstractEntity {
 	@NotNull
 	private String nameCourse;
 	
-	@NotNull
+	@NotBlank
 	private String titleCourse;
 	
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private DifficultyType difficultyType;
+	private DifficultyType difficulty;
 	
 	@JoinTable(name="course_category")
 	@ManyToMany
@@ -52,15 +54,23 @@ public class Course extends AbstractEntity {
 	private List<Section> sections;
 	
 	@NotNull
-	private boolean isFree;
+	private boolean free;
+	
+	public Course() {
+		super();
+	}
+	
 
 	public boolean isFree() {
-		return isFree;
+		return free;
 	}
 
-	public void setFree(boolean isFree) {
-		this.isFree = isFree;
+
+	public void setFree(boolean free) {
+		this.free = free;
 	}
+
+
 
 	public String getNameCourse() {
 		return nameCourse;
@@ -119,17 +129,15 @@ public class Course extends AbstractEntity {
 		this.sections = sections;
 	}
 
-	public DifficultyType getDifficultyType() {
-		return difficultyType;
+	public DifficultyType getDifficulty() {
+		return difficulty;
 	}
 
-	public void setDifficultyType(DifficultyType difficultyType) {
-		this.difficultyType = difficultyType;
+	public void setDifficulty(DifficultyType difficulty) {
+		this.difficulty = difficulty;
 	}
 
-	public Course() {
-		super();
-	}
+
 	
 	
 	

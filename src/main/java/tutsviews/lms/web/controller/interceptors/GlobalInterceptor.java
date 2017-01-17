@@ -23,21 +23,17 @@ HitCounter hitCounter;
 	   @Override
 	    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object object, Exception arg3)
 	            throws Exception {
-		   logger.info("Request Completed!" );
 	    }
 	 
 	    @Override
 	    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object object, ModelAndView model)
 	            throws Exception {
-	    	logger.info("Method executed");
 	    }
 	 
 	    @Override
 	    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object object) throws Exception {
-	    	logger.info("Before process request");
 	    	hitCounter.setHits(hitCounter.getHits()+1);
 	    	System.out.println("Hits : "+ hitCounter.getHits());
-	    	request.setAttribute("item", null);
 	        return true;
 	    }
 

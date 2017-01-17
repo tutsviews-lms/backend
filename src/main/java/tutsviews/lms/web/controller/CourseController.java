@@ -1,5 +1,7 @@
 package tutsviews.lms.web.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import tutsviews.lms.domain.course.Course;
+import tutsviews.lms.repository.CourseRepository;
 import tutsviews.lms.service.CourseService;
 
 @Controller
@@ -18,8 +21,7 @@ public class CourseController {
 	
 	@Autowired 
 	CourseService courseService;
-	
-	
+		
 	@Autowired
 	Logger logger;
 	
@@ -27,8 +29,11 @@ public class CourseController {
 	@GetMapping("/courses")
 	
 	public String getAllCourses(Model model){
+		
+		List<Course> courses = courseService.getAllCourses();
+
 		model.addAttribute("mode", "MODE_COURSES");
-		model.addAttribute("courses",courseService.getAllCourses());
+		model.addAttribute("courses",courses);
 	return "courses";
 	}
 

@@ -1,6 +1,6 @@
 package tutsviews.lms.repository;
 
-import java.sql.Timestamp; 
+import java.sql.Timestamp;  
 import java.util.List;
 
 import org.springframework.data.domain.Page;

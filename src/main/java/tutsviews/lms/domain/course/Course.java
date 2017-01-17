@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -38,19 +39,19 @@ public class Course extends AbstractEntity {
 	private DifficultyType difficulty;
 	
 	@JoinTable(name="course_category")
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.LAZY)
 	private List<Category> categories;
 	
 	@JsonIgnore
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	private Author author;
 	
 	private String description;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	private Image image;
 	
-	@OneToMany( cascade = CascadeType.ALL,mappedBy = "course")
+	@OneToMany( cascade = CascadeType.ALL,mappedBy = "course", fetch=FetchType.LAZY)
 	private List<Section> sections;
 	
 	@NotNull

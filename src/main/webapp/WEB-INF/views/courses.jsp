@@ -41,6 +41,8 @@
 								<th>Description</th>
 								<th>Difficultée</th>
 								<th>Gratuit</th>
+								<th>
+								<th>
 							</tr>
 						</thead>
 						<tbody>
@@ -52,6 +54,10 @@
 									<td>${course.description}</td>
 									<td>${course.difficulty}</td>
 									<td>${course.free}</td>
+									<td><a href="/courses/update?id=${course.id}"><span
+											class="glyphicon glyphicon-pencil"></span></a></td>
+									<td><a href="/courses/delete?id=${course.id}"><span
+											class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -112,13 +118,19 @@
 								id="difficulty-name" />
 						</div>
 					</div>
-					
+
 					<div class="form-group">
-						<label for="course-is-free" class="control-label col-md-3">Cours Gratuit</label>
+						<label for="course-is-free" class="control-label col-md-3">Cours
+							Gratuit</label>
 						<div class="col-md-7">
 							<form:input path="free" cssClass="form-control"
 								id="course-is-free" />
 						</div>
+					</div>
+
+
+					<div class="form-group">
+						<input type="submit" class="btn btn-primary" value="Enregistrer">
 					</div>
 
 				</form:form>

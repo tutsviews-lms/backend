@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
@@ -45,10 +46,10 @@ public class Author extends AbstractEntity {
 	@NotNull
 	private String tel;
 
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author", fetch=FetchType.LAZY)
 	private List<Course> courses;
 
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL , fetch=FetchType.LAZY)
 	private Image image;
 
 	public Author() {

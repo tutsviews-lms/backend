@@ -49,7 +49,6 @@ public class AuthorController {
 	
 	@GetMapping("/authors")
 	public String allAuthors(Model model) {
-		logger.info("Author list size is " + authorService.getAllAuthors().size());
 		model.addAttribute("mode", "MODE_AUTHORS");
     	return "authors";
 	}

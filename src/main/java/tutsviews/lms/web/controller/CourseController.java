@@ -19,16 +19,16 @@ public class CourseController {
 	@Autowired 
 	CourseService courseService;
 	
+	
 	@Autowired
 	Logger logger;
 	
 	
 	@GetMapping("/courses")
+	
 	public String getAllCourses(Model model){
-		System.out.println(courseService.getAllCourses().get(0));
 		model.addAttribute("mode", "MODE_COURSES");
 		model.addAttribute("courses",courseService.getAllCourses());
-
 	return "courses";
 	}
 
@@ -53,6 +53,14 @@ public class CourseController {
 	public String deleteCourse(@RequestParam int id, Model model){
 		model.addAttribute("mode", "MODE_COURSES");
 		courseService.deleteCourse(id);
+		return "courses";
+	}
+	
+	
+	@GetMapping("/courses/update")
+	public String updateCourse(@RequestParam int id, Model model, @ModelAttribute Course course){
+		model.addAttribute("mode", "MODE_COURSES");
+		courseService.saveCourse(course);
 		return "courses";
 	}
 	

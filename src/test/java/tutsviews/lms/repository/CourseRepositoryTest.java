@@ -20,6 +20,12 @@ public class CourseRepositoryTest extends AbstractTest {
 	
 	
 	@Test
+	public void search_All(){
+		List<Course> courses = courseRepository.findAll();
+		assertThat(courses.size(), is(4));
+	}
+	
+	@Test
 	public void search_NoCourseEntriesFound_ShouldReturnEmptyList(){
 		List<Course> courses = courseRepository.findCoursesByNameCourse("NOT_FOUND");
 		assertThat(courses.size(), is(0));

@@ -8,9 +8,8 @@ import org.springframework.stereotype.Repository;
 import tutsviews.lms.domain.course.Course;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Course,Long>{
+public interface CourseRepository extends JpaRepository<Course, Long>  {
 
 	List<Course> findCoursesByNameCourse(String nameCourse);
-	
 	
 }

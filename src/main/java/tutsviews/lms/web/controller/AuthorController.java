@@ -80,9 +80,10 @@ public class AuthorController {
 	
 	
 	@GetMapping("/authors/update")
-	public String updateAuthor(@RequestParam int id, Model model) {
+	public String updateAuthor(@RequestParam int id, Model model, SessionStatus status) {
 		model.addAttribute("author", authorService.getOneAuthor(id));
 		model.addAttribute("mode", "MODE_UPDATE_AUTHOR");
+		status.setComplete();
     	return "authors";
 	}
 

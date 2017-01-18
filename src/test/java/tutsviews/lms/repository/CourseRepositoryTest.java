@@ -28,7 +28,7 @@ public class CourseRepositoryTest extends AbstractTest {
 	
 	@Test
 	public void Delete_One_Then_search_All(){
-		courseRepository.delete((long) 1);
+		courseRepository.delete((long) 4);
 		List<Course> courses = courseRepository.findAll();
 		assertThat(courses.size(), is(3));
 	}

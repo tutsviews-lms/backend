@@ -108,6 +108,7 @@
 						<div class="col-md-7">
 							<form:textarea path="description" cssClass="form-control"
 								id="course-description" rows="3" />
+								<form:errors path="description"/>
 						</div>
 					</div>
 

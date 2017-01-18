@@ -18,13 +18,8 @@ public class AuthorValidator implements Validator {
 	public void validate(Object object, Errors error) {
 		Author author=(Author)object;
 		System.out.println(author.getPassword());
-		int a = author.getPassword().length();
 		if (author.getPassword().length()<3) {
-			System.out.println(a);
 			error.rejectValue("password", "author.password", "Le mot de passe saisi est trop court");
-			System.out.println(a);
-		}else {
-			System.out.println(a);
 		}
 	}
 	

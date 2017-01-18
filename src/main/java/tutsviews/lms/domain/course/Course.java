@@ -28,10 +28,10 @@ public class Course extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
 
-	@NotNull
+	@NotBlank(message="Le nom ne peut pas être vide.")
 	private String nameCourse;
 	
-	@NotNull
+	@NotBlank(message="Le titre ne peut pas être vide.")
 	private String titleCourse;
 	
 	@NotNull

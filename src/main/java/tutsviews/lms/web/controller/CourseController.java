@@ -4,11 +4,16 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,6 +22,7 @@ import org.springframework.web.bind.support.SessionStatus;
 
 import tutsviews.lms.domain.course.Course;
 import tutsviews.lms.service.CourseService;
+import tutsviews.lms.web.controller.data.validators.CourseValidator;
 
 @Controller
 @SessionAttributes("course")
@@ -28,6 +34,12 @@ public class CourseController {
 		
 	@Autowired
 	Logger logger;
+	
+	@ModelAttribute("difficultyOptions")
+	public List<String> getOptions(){
+		List<String> DifficutyCheks = new LinkedList<>(Arrays.asList(new String[]{"HARD","MEDIUM","EASY"}));
+		return DifficutyCheks;
+	}
 	
 	@ModelAttribute("course")
 	public Course getCourse(){
@@ -57,7 +69,11 @@ public class CourseController {
 	
 	
 	@PostMapping("/courses/save")
-	public String saveCourse(@ModelAttribute Course course, SessionStatus status) {
+	public String saveCourse(@Valid  @ModelAttribute Course course, BindingResult result, SessionStatus status,Model model) {
+		if (result.hasErrors()) {
+			model.addAttribute("mode", "MODE_NEW_COURSE");
+			return("courses");
+		}
 		courseService.saveCourse(course);
 		status.setComplete();
 		return "redirect:/courses";
@@ -81,4 +97,9 @@ public class CourseController {
 		return "courses";
 	}
 	
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder){
+		binder.addValidators(new CourseValidator());
+	}
 }

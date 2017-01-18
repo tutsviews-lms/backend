@@ -114,19 +114,25 @@
 					<div class="form-group">
 						<label for="difficulty-name" class="control-label col-md-3">Difficulté</label>
 						<div class="col-md-7">
-							<form:input path="difficulty" cssClass="form-control"
-								id="difficulty-name" />
+							<form:select items="${difficultyOptions}" path="difficulty"
+								cssClass="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label for="course-is-free" class="control-label col-md-3">Cours
-							Gratuit</label>
-						<div class="col-md-7">
-							<form:input path="free" cssClass="form-control"
-								id="course-is-free" />
+						<label for="course-is-free" class="control-label col-md-3">Accès
+							au cours</label>
+
+						<div class="col-md-1">
+							<form:radiobutton path="free" id="course-is-free" value="true"
+								label="Gratuit" />
+						</div>
+							<div class="col-md-1">
+							<form:radiobutton path="free" id="course-is-free" value="false"
+								label="Payant" />
 						</div>
 					</div>
+
 
 
 					<div class="form-group">

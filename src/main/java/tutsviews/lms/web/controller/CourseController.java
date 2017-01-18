@@ -1,5 +1,7 @@
 package tutsviews.lms.web.controller;
 
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -47,6 +49,8 @@ public class CourseController {
 	@GetMapping("/courses/add")
 	public String addCourse(Model model){
 		model.addAttribute("mode", "MODE_NEW_COURSE");
+		List<String> DifficutyCheks = new LinkedList<>(Arrays.asList(new String[]{"HARD","MEDIUM","EASY"}));
+		model.addAttribute("difficultyOptions",DifficutyCheks);
 	return "courses";
 	}
 	

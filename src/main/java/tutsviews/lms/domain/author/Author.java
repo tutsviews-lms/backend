@@ -46,10 +46,10 @@ public class Author extends AbstractEntity {
 	@NotNull
 	private String tel;
 
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author", fetch=FetchType.LAZY)
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author")
 	private List<Course> courses;
 
-	@OneToOne(cascade = CascadeType.ALL , fetch=FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL )
 	private Image image;
 
 	public Author() {

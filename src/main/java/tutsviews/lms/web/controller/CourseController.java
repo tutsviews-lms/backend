@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import tutsviews.lms.domain.course.Course;
-import tutsviews.lms.repository.CourseRepository;
 import tutsviews.lms.service.CourseService;
 
 @Controller

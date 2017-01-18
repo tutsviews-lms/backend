@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.repository.AuthorRepository;
 import tutsviews.lms.service.AuthorService;
 
 @Service
+@Transactional
 public class AuthorServiceImpl implements AuthorService {
 
 	@Autowired

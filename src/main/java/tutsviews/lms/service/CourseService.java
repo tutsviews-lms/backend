@@ -2,8 +2,11 @@ package tutsviews.lms.service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import tutsviews.lms.domain.course.Course;
 
+@Transactional
 public interface CourseService {
 
 	

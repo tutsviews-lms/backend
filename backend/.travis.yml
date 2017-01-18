@@ -1,0 +1,17 @@
+language: java
+jdk:
+- oraclejdk8
+install:
+- mvn -N io.takari:maven:wrapper
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+#script:
+#- mvn test
+before_install:
+  - chmod +x mvnw
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: qMfPC1CGLIs+xiBBaeLcXr9biHSl+OMK/3XYl31iZLUAiZoWyhsC4tQqNVPclHPHXC3QHv9tze63gVNjcYq2/hHWgpThPQ1eA/ISDi9sRmhkkIEXkc/IBclDLClfK/oIOLXXxrBOWzwR/m+YAtlHERmpcCQ8s8EKpr0JKMjoz+X/k1aTv754+piYjpqamIet9m0Jk2xKo0r8pe4ofWLkvt+97GMkg4wcEMNNwHIp8yYSpAdr5QIJhhTel2dCmQnWfpRKk++U1i44k7N9sVwAwHIGju86JJ9XmYTtoeh35MFh7B8OMacxAGwatkWJcVpGM/tv4M4NupC02cHGKbthl1RRhDzT3N04J8BU+TMayaZ4aPX218csMLUb9ntVEYK7KwcAuXXsuXCBglURxg8gpj7bHk8e350KQ3/DkDOhUqmcynnVwD9tu7/iC0xNebMMrkunF3612M2M4zXSxnh2xwUYhQDkW6dzZKB2Jl3W9jHKGJPihx42MhtkaOeLOGQ+5aMA5uSrFoFZoTo8H70Oecp910h1K3l+tuxw4nuMZydg7hRACJ5xwg6nTxvAte4WpGdM/uyHuaH0ZBvK6wJg1v8kssFWMJM3P2t5yTwCNQvXJ8Al8yVYOAi96IF3xgN6xnC5DZ6A0QwtT5JASEIAfOYbrMA4OxuhR0pVlrypvQM=
+#  app: tutsviews-lms
+#  on:
+#    repo: tutsviews-lms/backend

@@ -31,7 +31,7 @@ public class Course extends AbstractEntity {
 	@NotNull
 	private String nameCourse;
 	
-	@NotBlank
+	@NotNull
 	private String titleCourse;
 	
 	@NotNull
@@ -48,10 +48,10 @@ public class Course extends AbstractEntity {
 	
 	private String description;
 	
-	@OneToOne(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToOne(cascade = CascadeType.ALL)
 	private Image image;
 	
-	@OneToMany( cascade = CascadeType.ALL,mappedBy = "course", fetch=FetchType.LAZY)
+	@OneToMany( cascade = CascadeType.ALL,mappedBy = "course")
 	private List<Section> sections;
 	
 	@NotNull

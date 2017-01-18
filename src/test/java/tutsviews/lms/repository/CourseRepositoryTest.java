@@ -1,13 +1,13 @@
 package tutsviews.lms.repository;
 
+import static org.hamcrest.Matchers.hasProperty;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 import java.util.List;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-
-import static org.hamcrest.Matchers.*;
-import static org.junit.Assert.*;
 
 import tutsviews.lms.AbstractTest;
 import tutsviews.lms.domain.course.Course;
@@ -23,6 +23,14 @@ public class CourseRepositoryTest extends AbstractTest {
 	public void search_All(){
 		List<Course> courses = courseRepository.findAll();
 		assertThat(courses.size(), is(4));
+	}
+	
+	
+	@Test
+	public void Delete_One_Then_search_All(){
+		courseRepository.delete((long) 1);
+		List<Course> courses = courseRepository.findAll();
+		assertThat(courses.size(), is(3));
 	}
 	
 	@Test

@@ -1,14 +1,18 @@
 package tutsviews.lms.repository;
 
-import java.util.List;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import tutsviews.lms.domain.media.Image;
-
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
-public class ImageRepositoryTest {
+import java.util.List;
+
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import tutsviews.lms.AbstractTest;
+import tutsviews.lms.domain.media.Image;
+
+public class ImageRepositoryTest extends AbstractTest{
 	
 	
 	@Autowired

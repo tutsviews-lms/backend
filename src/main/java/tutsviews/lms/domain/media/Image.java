@@ -1,6 +1,5 @@
 package tutsviews.lms.domain.media;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -28,7 +27,7 @@ public class Image extends AbstractEntity {
 	private String uriImage;
 	
 	@NotNull
-	private int widhImage;
+	private int widthImage;
 	
 	@NotNull
 	private int heightImage;
@@ -76,12 +75,14 @@ public class Image extends AbstractEntity {
 		this.uriImage = uriImage;
 	}
 
-	public int getWidhImage() {
-		return widhImage;
+	
+
+	public int getWidthImage() {
+		return widthImage;
 	}
 
-	public void setWidhImage(int widhImage) {
-		this.widhImage = widhImage;
+	public void setWidthImage(int widthImage) {
+		this.widthImage = widthImage;
 	}
 
 	public int getHeightImage() {

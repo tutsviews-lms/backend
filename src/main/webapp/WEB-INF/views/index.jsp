@@ -22,9 +22,11 @@
 
 <link rel="stylesheet"
 	href="<spring:url value="/css/bootstrap.min.css"/>" type="text/css" />
-<link rel="stylesheet" href="<spring:url value="/css/style.css"/>"
+<link rel="stylesheet" href="<spring:url value="static/css/style.css"/>"
 	type="text/css" />
-
+	
+	
+	
 </head>
 
 

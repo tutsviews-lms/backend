@@ -72,7 +72,7 @@ public class ImageController {
 	}
 	
 	
-	@GetMapping()
+	@GetMapping("/images/delete")
 	public String deleteImage(@RequestParam int id, Model model){
 		model.addAttribute("mode", "MODE_IMAGES");
 		imageService.deleteImage(id);

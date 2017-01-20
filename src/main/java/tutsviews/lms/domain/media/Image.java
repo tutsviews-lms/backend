@@ -1,9 +1,8 @@
 package tutsviews.lms.domain.media;
 
-import javax.persistence.Entity;
+import javax.persistence.Entity; 
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -28,10 +27,8 @@ public class Image extends AbstractEntity {
 	@NotBlank(message="Champs de saisi trop court")
 	private String uriImage;
 	
-	@NotBlank(message="Champs de saisi trop court")
 	private int widthImage;
 	
-	@NotBlank(message="Champs de saisi trop court")
 	private int heightImage;
 
 	@JsonIgnore

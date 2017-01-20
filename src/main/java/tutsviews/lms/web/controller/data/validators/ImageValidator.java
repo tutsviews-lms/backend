@@ -14,7 +14,8 @@ public class ImageValidator implements Validator {
 
 	@Override
 	public void validate(Object target, Errors errors) {
-
+		
+		System.out.println(errors.getFieldErrorCount());
 	}
 
 }

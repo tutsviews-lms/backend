@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.glassfish.hk2.utilities.binding.BindingBuilderFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,12 +25,13 @@ public class ImageController {
 	@Autowired
 	ImageService imageService;
 	
-	@ModelAttribute
+	@ModelAttribute("images")
 	public List<Image> getImages(){
-		return imageService.getAllImages();
+		List<Image> images = imageService.getAllImages();
+		return images;
 	}
 	
-	@ModelAttribute
+	@ModelAttribute("image")
 	public Image getImage(){
 		return new Image();
 	}
@@ -53,9 +53,10 @@ public class ImageController {
 	
 	
 	@PostMapping("/images/save")
-	public String saveImage(@Valid @ModelAttribute Image image,BindingResult bindingResult, Model model){
+	public String saveImage(@Valid  @ModelAttribute Image image ,BindingResult bindingResult , Model model){
 		if (bindingResult.hasErrors()) {
-			return"images/add";
+			model.addAttribute("mode", "MODE_NEW_IMAGE");
+			return"images";
 		}
 		model.addAttribute("mode", "MODE_NEW_IMAGE");
 		imageService.saveImage(image);
@@ -74,9 +75,11 @@ public class ImageController {
 	
 	@GetMapping("/images/delete")
 	public String deleteImage(@RequestParam int id, Model model){
-		model.addAttribute("mode", "MODE_IMAGES");
 		imageService.deleteImage(id);
-		return"images";
+		model.addAttribute("mode", "MODE_IMAGES");
+		List<Image> images =getImages();
+		model.addAttribute("iamges", images);
+		return"redirect:/images";
 	}
 	
 	@InitBinder

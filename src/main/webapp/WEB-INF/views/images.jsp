@@ -118,7 +118,6 @@
 				<div class="col-md-7">
 					<form:input path="heightImage" id="height-image"
 						cssClass="form-control" />
-					<form:errors path="heightImage" />
 				</div>
 			</div>
 
@@ -129,7 +128,6 @@
 				<div class="col-md-7">
 					<form:input path="widthImage" id="width-image"
 						cssClass="form-control" />
-					<form:errors path="widthImage" />
 				</div>
 			</div>
 

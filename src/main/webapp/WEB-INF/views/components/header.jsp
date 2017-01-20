@@ -24,7 +24,7 @@
       
         <li class="active"><a href="<spring:url value="/"/>">Accueil <span class="sr-only">(current)</span></a></li>
       
-        <li class="disabled" ><a href="#">Présentation</a></li>
+        <li class="disabled" ><a href="">Présentation</a></li>
       
       
       
@@ -63,8 +63,7 @@
         </li>
       </ul>
       
-      
-      
+     
       
       
       

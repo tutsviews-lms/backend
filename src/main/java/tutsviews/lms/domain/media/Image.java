@@ -5,6 +5,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import tutsviews.lms.domain.author.Author;
@@ -17,19 +19,19 @@ public class Image extends AbstractEntity {
 	
 	private static final long serialVersionUID = 8645020540682109284L;
 
-	@NotNull
+	@NotBlank(message="Champs de saisi trop court")
 	private String nameImage;
 	
-	@NotNull
+	@NotBlank(message="Champs de saisi trop court")
 	private String urlImage;
 	
-	@NotNull
+	@NotBlank(message="Champs de saisi trop court")
 	private String uriImage;
 	
-	@NotNull
+	@NotBlank(message="Champs de saisi trop court")
 	private int widthImage;
 	
-	@NotNull
+	@NotBlank(message="Champs de saisi trop court")
 	private int heightImage;
 
 	@JsonIgnore

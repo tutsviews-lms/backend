@@ -1,3 +1,4 @@
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
@@ -23,7 +24,7 @@
       
         <li class="active"><a href="<spring:url value="/"/>">Accueil <span class="sr-only">(current)</span></a></li>
       
-        <li><a href="#">Présentation</a></li>
+        <li class="disabled" ><a href="#">Présentation</a></li>
       
       
       
@@ -43,7 +44,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="<spring:url value="/courses"/>">Tout afficher</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="<spring:url value="/courses"/>">Gestion des contenus</a></li>
+            <li class="disabled"><a href="<spring:url value="/courses"/>">Gestion des contenus</a></li>
           </ul>
         </li>
         
@@ -51,7 +52,7 @@
                   <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ressources <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Images</a></li>
+            <li><a href="/images/add">Images</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Audios</a></li>
             <li role="separator" class="divider"></li>
@@ -60,15 +61,23 @@
             <li><a href="#">Textes</a></li>
           </ul>
         </li>
-        
-        
       </ul>
-      <form class="navbar-form navbar-left">
+      
+      
+      
+      
+      
+      
+      <form class="navbar-form navbar-left" action="/hello">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Chercher un cours">
         </div>
         <button type="submit" class="btn btn-default">Chercher</button>
       </form>
+      
+      
+      
+      
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Lien</a></li>
         <li class="dropdown">

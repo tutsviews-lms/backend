@@ -31,7 +31,7 @@
 					l'image</label>
 				<div class="col-md-7">
 					<form:input path="urlImage" id="url-image" cssClass="form-control" />
-					<form:errors path="urlImage" />
+					<form:errors path="urlImage"  />
 				</div>
 			</div>
 

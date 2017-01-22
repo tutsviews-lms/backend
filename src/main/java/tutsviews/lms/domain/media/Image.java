@@ -1,6 +1,7 @@
 package tutsviews.lms.domain.media;
 
-import javax.persistence.Entity; 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
@@ -32,12 +33,12 @@ public class Image extends AbstractEntity {
 	private int heightImage;
 
 	@JsonIgnore
-	@OneToOne
+	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "id")
 	private Content content;
 	
 	@JsonIgnore
-	@OneToOne
+	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "id")
 	private Author author;
 	

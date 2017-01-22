@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -24,7 +25,7 @@ public class Category {
 	
 	@JsonIgnore
 	@JoinTable(name="course_category")
-	@ManyToMany(cascade = { CascadeType. ALL })
+	@ManyToMany(cascade = { CascadeType. ALL }, fetch=FetchType.LAZY)
 	private List<Course> Courses;
 	
 	public long getId() {

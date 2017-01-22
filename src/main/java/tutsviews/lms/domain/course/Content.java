@@ -34,6 +34,7 @@ public class Content extends AbstractEntity {
 	
 	@NotNull
 	private int orderContent;
+	
 	@OneToOne(mappedBy = "content", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Image image;
 	

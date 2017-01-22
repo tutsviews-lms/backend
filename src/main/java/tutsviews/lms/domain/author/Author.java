@@ -46,15 +46,11 @@ public class Author extends AbstractEntity {
 	@NotNull
 	private String tel;
 
-	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author")
+	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author", fetch=FetchType.LAZY)
 	private List<Course> courses;
 
-	@OneToOne(cascade = CascadeType.ALL )
+	@OneToOne(cascade = CascadeType.ALL  , fetch=FetchType.LAZY)
 	private Image image;
-
-	public Author() {
-		super();
-	}
 
 	public String getLastName() {
 		return lastName;
@@ -127,6 +123,11 @@ public class Author extends AbstractEntity {
 	public void setImage(Image image) {
 		this.image = image;
 	}
+
+	public Author() {
+		super();
+	}
+	
 
 	public Author(String lastName, String firstName, String description, String email, String password, Address address,
 			String tel, List<Course> courses, Image image) {

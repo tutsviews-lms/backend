@@ -74,7 +74,7 @@ public class CourseController {
 			model.addAttribute("mode", "MODE_NEW_COURSE");
 			return("courses");
 		}
-		courseService.saveCourse(course);
+		courseService.createCourse(course);
 		status.setComplete();
 		return "redirect:/courses";
 	}

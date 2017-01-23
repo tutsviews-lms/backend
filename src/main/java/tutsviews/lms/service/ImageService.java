@@ -9,12 +9,12 @@ import tutsviews.lms.domain.media.Image;
 @Transactional
 public interface ImageService {
 
-	public void saveImage(Image image);
+	void createImage(Image image);
 	
-	public List<Image> getAllImages();
+	List<Image> getAllImages();
 	
-	public Image getOneImage(int id);
+	Image getOneImage(int id);
 	
-	public void deleteImage(int id);
+	boolean deleteImage(int id);
 	
 }

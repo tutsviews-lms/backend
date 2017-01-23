@@ -2,6 +2,7 @@ package tutsviews.lms.service.impl;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,9 @@ public class CourseServiceImpl implements CourseService {
 
 	@Autowired
 	CourseRepository courseRepository;
+	
+	@Autowired
+	Logger logger;
 
 	
 	public List<Course> getAllCourses() {
@@ -27,12 +31,18 @@ public class CourseServiceImpl implements CourseService {
 		return courseRepository.findOne((long) id);
 	}
 
-	public void saveCourse(Course course) {
-		courseRepository.save(course);
+	public Course createCourse(Course course) {
+		return courseRepository.save(course);
 	}
 
-	public void deleteCourse(int id) {
-		courseRepository.delete((long) id);
+	public boolean deleteCourse(int id) {
+		if (!(courseRepository.findOne((long) id)==null)) {
+			courseRepository.delete((long) id);
+			logger.info("Course with id "+id +" have been deleted.");
+			return true;
+		}else
+			logger.error("cannot delete course with id "+id);
+			return false;
 	}
 
 	

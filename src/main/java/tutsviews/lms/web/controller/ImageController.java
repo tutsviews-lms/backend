@@ -59,7 +59,7 @@ public class ImageController {
 			return"images";
 		}
 		model.addAttribute("mode", "MODE_NEW_IMAGE");
-		imageService.saveImage(image);
+		imageService.createImage(image);
 		return "redirect:/images";
 	}
 	

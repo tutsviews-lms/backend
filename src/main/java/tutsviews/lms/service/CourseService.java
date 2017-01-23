@@ -14,7 +14,7 @@ public interface CourseService {
 	
 	Course getOneCourse(int id);
 	
-	void saveCourse(Course course);
+	Course createCourse(Course course);
 	
-	void deleteCourse(int id);	
+	boolean deleteCourse(int id);	
 }

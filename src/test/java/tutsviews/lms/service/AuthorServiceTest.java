@@ -60,6 +60,12 @@ public class AuthorServiceTest extends AbstractTest {
 		 verify(authorRepository).findOne((long) AUTHOR_ID);
 		
 	}
+
 	
+	@Test
+	public void saveAuthor_shoud_add_an_author(){
+		
+		
+	}
 
 }

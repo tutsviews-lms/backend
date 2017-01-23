@@ -69,7 +69,7 @@ public class AuthorRepositoryTest extends AbstractTest{
 	
 	
 	@Test
-	public void SaveAuthor_shoud_save_a_new_author(){
+	public void SaveAuthor_shoud_add_a_new_author(){
 		
 		Author newAuthor = new Author();
 		newAuthor.setLastName("Zaier");

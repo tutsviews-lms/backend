@@ -13,9 +13,9 @@ public interface AuthorService {
 	
 	Author getOneAuthor(int id);
 	
-	void deleteAuthor(int id);
+	boolean deleteAuthor(int id) ;
 	
-	Author saveAuthor(Author author);
+	Author createAuthor(Author author);
 	
 	
 	

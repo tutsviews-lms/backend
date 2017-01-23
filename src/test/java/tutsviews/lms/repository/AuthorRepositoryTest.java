@@ -69,12 +69,12 @@ public class AuthorRepositoryTest extends AbstractTest{
 	
 	
 	@Test
-	public void SaveAuthor_shoud_add_a_new_author(){
+	public void SaveAuthor_shoud_add_a_new_author(){ 
 		
 		Author newAuthor = new Author();
 		newAuthor.setLastName("Zaier");
 		newAuthor.setFirstName("Alaeddine");
-		newAuthor.setPassword("password");
+		newAuthor.setPassword("password"); 
 		newAuthor.setEmail("");
 		newAuthor.setTel("");
 		newAuthor.setCreatedAt(new Date());
@@ -86,5 +86,8 @@ public class AuthorRepositoryTest extends AbstractTest{
         assertEquals(reloadedAuthor.getLastName(), newAuthor.getLastName());
          
 	}
+	
+	
+
 	
 }

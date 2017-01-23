@@ -36,7 +36,7 @@ public class AuthorController {
 
 	
 	@ModelAttribute("author")
-	public Author getAuthor(){
+	public Author getAuthor(){ 
 		return new Author();
 	}
 	
@@ -69,7 +69,7 @@ public class AuthorController {
 		}
 		
 		author.setCreatedAt(new Date());
-		authorService.saveAuthor(author);
+		authorService.createAuthor(author);
 		request.setAttribute("authors", authorService.getAllAuthors());
 		request.setAttribute("mode", "MODE_AUTHORS");
 		status.setComplete();
@@ -89,7 +89,7 @@ public class AuthorController {
 
 	
 	@GetMapping("/authors/delete")
-	public String deleteAuthor(@RequestParam int id, HttpServletRequest request) {
+	public String deleteAuthor(@RequestParam int id, HttpServletRequest request) throws Exception {
 		authorService.deleteAuthor(id);
 		request.setAttribute("mode", "MODE_AUTHORS");
     	return "redirect:/authors";

@@ -20,7 +20,7 @@ public class CourseServiceImpl implements CourseService {
 
 	
 	public List<Course> getAllCourses() {
-  		return courseRepository.findAll();
+  		return courseRepository.findAll(); 
 	}
 
 	public Course getOneCourse(int id) {

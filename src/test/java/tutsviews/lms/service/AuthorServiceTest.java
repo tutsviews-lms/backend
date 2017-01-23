@@ -6,6 +6,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyLong;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -18,6 +19,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.internal.verification.VerificationModeFactory;
+import org.slf4j.Logger;
 
 import tutsviews.lms.AbstractTest;
 import tutsviews.lms.domain.author.Author;
@@ -30,6 +32,9 @@ public class AuthorServiceTest extends AbstractTest {
 	
 	@Mock
 	private AuthorRepository authorRepository;
+	
+	@Mock
+	private Logger logger;
 	
 	@InjectMocks
 	private AuthorService authorService = new AuthorServiceImpl();
@@ -67,7 +72,7 @@ public class AuthorServiceTest extends AbstractTest {
 
 	
 	@Test
-	public void saveAuthor_shoud_add_a_new_author(){
+	public void createAuthor_shoud_add_a_new_author(){
 		
 		// Expected objects
         Author authorToSave = new Author();
@@ -76,14 +81,26 @@ public class AuthorServiceTest extends AbstractTest {
 		
         // Mockito expectations                            
         when(authorRepository.save(any(Author.class))).thenReturn(persistedAuthor);
-        
+         
         // Execute the method being tested     
-        Author newAuthor = authorService.saveAuthor(authorToSave);;
+        Author newAuthor = authorService.createAuthor(authorToSave);;
 
         // Validation  
         assertNotNull(newAuthor);
         assertEquals(persistedAuthor.getId(), newAuthor.getId());
         verify(authorRepository, VerificationModeFactory.times(1)).save(authorToSave);
+	} 
+	
+	@Test
+	public void deleteAuthor_should_call_delete_from_repository(){
+
+		// Mockito expectations
+        doNothing().when(authorRepository).delete(anyLong());
+        when(authorRepository.findOne(anyLong())).thenReturn(new Author());
+        
+        // Execute the method being tested
+        assertEquals(authorService.deleteAuthor(AUTHOR_ID), true);
+        verify(authorRepository,VerificationModeFactory.times(1)).delete((long) AUTHOR_ID);
 	}
 
 }

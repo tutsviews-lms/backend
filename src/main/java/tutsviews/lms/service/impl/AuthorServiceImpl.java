@@ -2,6 +2,7 @@ package tutsviews.lms.service.impl;
 
 import java.util.List;
 
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +13,10 @@ import tutsviews.lms.service.AuthorService;
 
 @Service
 @Transactional
-public class AuthorServiceImpl implements AuthorService {
+public class AuthorServiceImpl implements AuthorService { 
+	
+	@Autowired 
+	Logger logger;
 
 	@Autowired
 	AuthorRepository authorRepository;
@@ -25,11 +29,20 @@ public class AuthorServiceImpl implements AuthorService {
 		return authorRepository.findOne((long) id);
 	}
 
-	public void deleteAuthor(int id) {
-		authorRepository.delete((long) id);
+	public boolean deleteAuthor(int id) { 
+		
+        if (authorRepository.findOne((long) id) != null) {
+            authorRepository.delete((long) id);
+            logger.info("User ID: " + id + " deleted Entry from Author table.");
+            return true;
+        } else {
+            logger.error("Error while deleting Entry with id: "+ id + " from Author table.");
+            return false;
+        }
+		
 	}
 
-	public Author saveAuthor(Author author) {
+	public Author createAuthor(Author author) {
 		return authorRepository.save(author);
 
 	}

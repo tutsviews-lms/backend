@@ -53,7 +53,7 @@ public class AuthorController {
     	return "authors";
 	}
 	
-	@GetMapping("/authors/add")	
+	@GetMapping("/authors/add")	 
 	public String addAuthor(Model model) {
 		model.addAttribute("mode", "MODE_NEW_AUTHOR");
     	return "authors";

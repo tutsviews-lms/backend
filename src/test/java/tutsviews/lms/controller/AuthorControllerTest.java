@@ -9,6 +9,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
+import org.glassfish.hk2.external.org.objectweb.asm.xml.SAXAnnotationAdapter;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -74,10 +75,19 @@ public class AuthorControllerTest extends AbstractTest {
 		mockMvc.perform(get("/authors"))
 		.andExpect(status().isOk())
 		.andExpect(view().name("authors"))
-		.andExpect(model().attribute("authors", is(authors)));
+		.andExpect(model().attribute("authors", is(authors)))
+		.andExpect(model().attribute("mode", "MODE_AUTHORS"));
 		
 	}
 	
-	
+	@Test
+	public void test_addAuthor() throws Exception{
+		mockMvc.perform(get("/authors/add"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("authors"))
+		.andExpect(model().attribute("mode", "MODE_NEW_AUTHOR"))
+		.andExpect(model().attributeExists("author"));
+		
+	}
 	
 }

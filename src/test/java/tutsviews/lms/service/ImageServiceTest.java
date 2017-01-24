@@ -1,11 +1,9 @@
 package tutsviews.lms.service;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -86,5 +84,18 @@ public class ImageServiceTest extends AbstractTest {
 		
 	}
 	
+	
+	
+	@Test
+	public void delete_existing_image_should_delete_image_and_return_true(){
+		Image imageToBeDeleted = new Image();
+		imageToBeDeleted.setId((long) IMAGE_ID);
+		
+		when(imageRepository.findOne(anyLong())).thenReturn(imageToBeDeleted);
+		doNothing().when(imageRepository).delete(anyLong());
+		
+		assertTrue(imageService.deleteImage(IMAGE_ID));
+		verify(imageRepository).delete((long)IMAGE_ID);
+	}
 	
 }

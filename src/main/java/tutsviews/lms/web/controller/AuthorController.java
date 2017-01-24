@@ -89,9 +89,9 @@ public class AuthorController {
 
 	
 	@GetMapping("/authors/delete")
-	public String deleteAuthor(@RequestParam int id, HttpServletRequest request) throws Exception {
+	public String deleteAuthor(@RequestParam int id, Model model) throws Exception {
 		authorService.deleteAuthor(id);
-		request.setAttribute("mode", "MODE_AUTHORS");
+		model.addAttribute("mode", "MODE_AUTHORS");
     	return "redirect:/authors";
 	}
 

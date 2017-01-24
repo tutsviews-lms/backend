@@ -1,6 +1,8 @@
 package tutsviews.lms.controller;
 
 import static org.hamcrest.Matchers.is;
+import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -9,7 +11,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.ArrayList;
 import java.util.List;
 
-import org.glassfish.hk2.external.org.objectweb.asm.xml.SAXAnnotationAdapter;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -17,11 +18,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import tutsviews.lms.AbstractTest;
@@ -69,7 +68,7 @@ public class AuthorControllerTest extends AbstractTest {
 		authors.add(new Author());
 		authors.add(new Author());
 		
-		Mockito.when(authorService.getAllAuthors()).thenReturn(authors);
+		when(authorService.getAllAuthors()).thenReturn(authors);
 		
 		
 		mockMvc.perform(get("/authors"))
@@ -89,5 +88,31 @@ public class AuthorControllerTest extends AbstractTest {
 		.andExpect(model().attributeExists("author"));
 		
 	}
+	
+	
+	
+	@Test
+	public void test_updateAuthor() throws Exception{
+		Author authorToBeUpdated = new Author();
+		when(authorService.getOneAuthor(anyInt())).thenReturn(authorToBeUpdated);
+		
+		mockMvc.perform(get("/authors/update?id=1"))
+		.andExpect(status().isOk())
+		.andExpect(view().name("authors"))
+		.andExpect(model().attribute("author", authorToBeUpdated))
+		.andExpect(model().attribute("mode", "MODE_UPDATE_AUTHOR"));
+	}
+	
+	
+	@Test
+	public void test_deleteAuthor() throws Exception{
+		
+		when(authorService.deleteAuthor(Mockito.anyInt())).thenReturn(true);
+		mockMvc.perform(get("/authors/delete?id=3"))
+		.andExpect(status().isFound())
+		.andExpect(model().attribute("mode", "MODE_AUTHORS"));
+		
+	}
+	
 	
 }

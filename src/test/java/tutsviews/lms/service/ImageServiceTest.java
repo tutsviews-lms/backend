@@ -98,4 +98,11 @@ public class ImageServiceTest extends AbstractTest {
 		verify(imageRepository).delete((long)IMAGE_ID);
 	}
 	
+	
+	@Test
+	public void delete_non_existing_image_should_return_false(){
+		
+		when(imageRepository.getOne(anyLong())).thenReturn(null);
+		assertFalse(imageService.deleteImage(IMAGE_ID));
+	}
 }

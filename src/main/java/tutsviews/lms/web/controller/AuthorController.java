@@ -31,7 +31,7 @@ public class AuthorController {
 	@Autowired
 	AuthorService authorService;
 
-	@Autowired
+	@Autowired 
 	Logger logger;
 
 	

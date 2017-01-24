@@ -22,8 +22,8 @@ public class ImageServiceImpl implements ImageService {
 	
 	
 	@Override
-	public void createImage(Image image) {
-		imageRepository.save(image); 
+	public Image createImage(Image image) {
+		return imageRepository.save(image); 
 	}
 
 	@Override

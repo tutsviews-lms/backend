@@ -16,7 +16,7 @@ import tutsviews.lms.service.CourseService;
 @Transactional
 public class CourseServiceImpl implements CourseService {
 
-	@Autowired
+	@Autowired 
 	CourseRepository courseRepository;
 	
 	@Autowired

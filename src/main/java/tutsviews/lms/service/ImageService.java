@@ -9,7 +9,7 @@ import tutsviews.lms.domain.media.Image;
 @Transactional
 public interface ImageService {
 
-	void createImage(Image image);
+	Image createImage(Image image);
 	
 	List<Image> getAllImages();
 	

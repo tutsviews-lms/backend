@@ -2,6 +2,7 @@ package tutsviews.lms.service;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
@@ -36,7 +37,7 @@ public class AuthorServiceTest extends AbstractTest {
 	@Mock
 	private Logger logger;
 	
-	@InjectMocks
+	@InjectMocks 
 	private AuthorService authorService = new AuthorServiceImpl();
 	
 	@Before
@@ -101,6 +102,16 @@ public class AuthorServiceTest extends AbstractTest {
         // Execute the method being tested
         assertEquals(authorService.deleteAuthor(AUTHOR_ID), true);
         verify(authorRepository,VerificationModeFactory.times(1)).delete((long) AUTHOR_ID);
+	}   
+	
+	
+	
+	@Test
+	public void delete_non_existing_Author_should_return_false(){
+		
+		when(authorRepository.findOne(anyLong())).thenReturn(null);		
+		assertFalse(authorService.deleteAuthor(AUTHOR_ID));
+		
 	}
 
 }

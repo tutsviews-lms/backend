@@ -1,15 +1,19 @@
 package tutsviews.lms.service;
 
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Matchers.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.internal.verification.VerificationModeFactory;
 import org.slf4j.Logger;
@@ -55,6 +59,32 @@ public class ImageServiceTest extends AbstractTest {
 	}
 	
 	
+	
+	@Test
+	public void getAllImages_should_return_all_images(){
+		
+		List<Image> images = new ArrayList<Image>();
+		images.add(new Image());
+		images.add(new Image());
+
+		when(imageRepository.findAll()).thenReturn(images);
+		
+		assertNotNull(imageService.getAllImages().size());
+		verify(imageRepository).findAll();
+	}
+
+
+	@Test
+	public void getOneImage_shoud_return_one_image(){
+		Image image = new Image();
+		image.setId((long) IMAGE_ID);
+		
+		when(imageRepository.getOne(anyLong())).thenReturn(image);
+		
+		assertEquals(imageService.getOneImage(IMAGE_ID), image);
+		verify(imageRepository).getOne((long) IMAGE_ID);
+		
+	}
 	
 	
 }

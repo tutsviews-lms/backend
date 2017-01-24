@@ -12,13 +12,14 @@ import tutsviews.lms.repository.CategoryRepositoryTest;
 import tutsviews.lms.repository.CourseRepositoryTest;
 import tutsviews.lms.repository.ImageRepositoryTest;
 import tutsviews.lms.service.AuthorServiceTest;
+import tutsviews.lms.service.ImageServiceTest;
 
 @RunWith(Suite.class)
 @SpringBootTest(classes = Application.class)
 @WebAppConfiguration
 @ActiveProfiles(profiles={"test","local-test"})
 @Suite.SuiteClasses({ AuthorRepositoryTest.class, CategoryRepositoryTest.class,CourseRepositoryTest.class,
-					ImageRepositoryTest.class,AuthorServiceTest.class})
+					ImageRepositoryTest.class,AuthorServiceTest.class,ImageServiceTest.class})
 public class ApplicationTests {
 
 	@Test

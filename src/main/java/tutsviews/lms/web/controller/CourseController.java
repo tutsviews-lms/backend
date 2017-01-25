@@ -70,10 +70,12 @@ public class CourseController {
 	
 	@PostMapping("/courses/save")
 	public String saveCourse(@Valid  @ModelAttribute Course course, BindingResult result, SessionStatus status,Model model) {
+		
 		if (result.hasErrors()) {
 			model.addAttribute("mode", "MODE_NEW_COURSE");
 			return("courses");
 		}
+		
 		courseService.createCourse(course);
 		status.setComplete();
 		return "redirect:/courses";

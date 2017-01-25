@@ -16,6 +16,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import tutsviews.lms.AbstractTest;
@@ -114,5 +115,22 @@ public class CourseControllerTest extends AbstractTest{
 	}
 	
 	
+	
+	@Test
+	public void saveCourse_should_return_form_view_with_entries_having_errors() throws Exception{
+		
+		mockMvc.perform(MockMvcRequestBuilders.post("/courses/save")
+				.param("nameCourse", "")
+				.param("titleCourse", "this is the title")
+				.param("difficulty", "HARD")
+				.param("description", "this is the description"))
+		.andExpect(MockMvcResultMatchers.view().name("courses"))
+		.andExpect(MockMvcResultMatchers.model().hasErrors())
+		.andExpect(MockMvcResultMatchers.model().attribute("mode", "MODE_NEW_COURSE"));
+		
+	}
+	
+	
+
 
 }

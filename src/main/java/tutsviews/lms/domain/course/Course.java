@@ -139,6 +139,22 @@ public class Course extends AbstractEntity {
 	}
 
 
+	public Course(String nameCourse, String titleCourse, DifficultyType difficulty, List<Category> categories,
+			Author author, String description, Image image, List<Section> sections, boolean free) {
+		super();
+		this.nameCourse = nameCourse;
+		this.titleCourse = titleCourse;
+		this.difficulty = difficulty;
+		this.categories = categories;
+		this.author = author;
+		this.description = description;
+		this.image = image;
+		this.sections = sections;
+		this.free = free;
+	}
+
+
+	
 	
 	
 	

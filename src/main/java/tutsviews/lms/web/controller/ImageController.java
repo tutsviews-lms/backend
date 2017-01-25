@@ -30,7 +30,7 @@ public class ImageController {
 		List<Image> images = imageService.getAllImages();
 		return images;
 	}
-	
+	 
 	@ModelAttribute("image")
 	public Image getImage(){
 		return new Image();

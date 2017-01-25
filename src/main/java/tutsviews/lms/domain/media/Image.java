@@ -92,7 +92,27 @@ public class Image extends AbstractEntity {
 	public void setHeightImage(int heightImage) {
 		this.heightImage = heightImage;
 	}
+	
+	
 
+	public Image() {
+		super();
+	}
+
+	public Image(String nameImage, String urlImage, String uriImage, int widthImage, int heightImage, Content content,
+			Author author) {
+		super();
+		this.nameImage = nameImage;
+		this.urlImage = urlImage;
+		this.uriImage = uriImage;
+		this.widthImage = widthImage;
+		this.heightImage = heightImage;
+		this.content = content;
+		this.author = author;
+	}
+
+	
+	
 	
 
 	

@@ -72,4 +72,19 @@ public class CourseControllerTest extends AbstractTest{
 	
 	
 	
+	@Test
+	public void test_addCourse() throws Exception {
+		
+		mockMvc.perform(MockMvcRequestBuilders.get("/courses/add"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andExpect(MockMvcResultMatchers.view().name("courses"))
+		.andExpect(MockMvcResultMatchers.model().attribute("mode", "MODE_NEW_COURSE"))
+		.andExpect(model().attributeExists("course"));
+
+		
+	}
+	
+	
+
+	
 }

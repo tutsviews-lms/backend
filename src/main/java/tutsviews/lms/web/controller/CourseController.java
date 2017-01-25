@@ -47,7 +47,7 @@ public class CourseController {
 	}
 	
 	@ModelAttribute("courses")
-	public List<Course> getCourses(){
+	public List<Course> getOneCourse(){
 		return courseService.getAllCourses();
 	}
 	

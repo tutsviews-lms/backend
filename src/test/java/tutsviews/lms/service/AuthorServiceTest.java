@@ -105,7 +105,7 @@ public class AuthorServiceTest extends AbstractTest {
 	}   
 	
 	
-	
+	 
 	@Test
 	public void delete_non_existing_Author_should_return_false(){
 		

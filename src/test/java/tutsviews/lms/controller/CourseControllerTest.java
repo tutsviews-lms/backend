@@ -98,4 +98,21 @@ public class CourseControllerTest extends AbstractTest{
 	}
 
 	
+	@Test
+	public void test_updateCourse() throws Exception{
+		
+		Course courseToBeUpdated = new Course();
+		
+		Mockito.when(courseService.getOneCourse(Mockito.anyInt())).thenReturn(courseToBeUpdated);
+		
+		mockMvc.perform(MockMvcRequestBuilders.get("/courses/update?id=1"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andExpect(MockMvcResultMatchers.model().attribute("mode", "MODE_NEW_COURSE"))
+		.andExpect(MockMvcResultMatchers.view().name("courses"))
+		.andExpect(MockMvcResultMatchers.model().attribute("course", courseToBeUpdated));
+		
+	}
+	
+	
+
 }

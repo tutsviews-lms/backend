@@ -12,9 +12,9 @@ public class AuthorValidator implements Validator {
 	@Override
 	public boolean supports(Class<?> clazz) {
 		boolean result = Author.class.equals(clazz);
-		return result;
-	}
-
+		return result; 
+	} 
+ 
 	@Override
 	public void validate(Object object, Errors error) {
 		Author author=(Author)object;

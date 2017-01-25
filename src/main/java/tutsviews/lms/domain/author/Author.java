@@ -124,7 +124,7 @@ public class Author extends AbstractEntity {
 		this.image = image;
 	}
 
-	public Author() {
+	public Author() { 
 		super();
 	}
 	

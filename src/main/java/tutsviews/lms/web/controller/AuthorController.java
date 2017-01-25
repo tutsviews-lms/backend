@@ -61,21 +61,21 @@ public class AuthorController {
 	
 	@PostMapping("/authors/save")
 	public String saveAuthor (@Valid @ModelAttribute Author author,BindingResult result ,
-			HttpServletRequest request, SessionStatus status) {
-	
+			Model model, SessionStatus status) {
+	 
 		if (result.hasErrors()) {
-			request.setAttribute("mode", "MODE_NEW_AUTHOR");
+			model.addAttribute("mode", "MODE_NEW_AUTHOR");
 	    	return "authors";
 		}
-		
+		 
 		author.setCreatedAt(new Date());
 		authorService.createAuthor(author);
-		request.setAttribute("authors", authorService.getAllAuthors());
-		request.setAttribute("mode", "MODE_AUTHORS");
+		model.addAttribute("authors", authorService.getAllAuthors());
+		model.addAttribute("mode", "MODE_AUTHORS");
 		status.setComplete();
     	return "redirect:/authors";
 	}
-	
+	 
 	
 	
 	

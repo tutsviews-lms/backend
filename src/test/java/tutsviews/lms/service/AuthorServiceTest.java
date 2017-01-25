@@ -80,7 +80,7 @@ public class AuthorServiceTest extends AbstractTest {
         Author persistedAuthor = new Author();
         persistedAuthor.setId((long) AUTHOR_ID);
 		
-        // Mockito expectations                            
+        // Mockito expectations                             
         when(authorRepository.save(any(Author.class))).thenReturn(persistedAuthor);
          
         // Execute the method being tested     

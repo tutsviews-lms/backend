@@ -86,5 +86,16 @@ public class CourseControllerTest extends AbstractTest{
 	
 	
 
+	@Test
+	public void test_deleteCourse() throws Exception{
+
+		Mockito.when(courseService.deleteCourse(Mockito.anyInt())).thenReturn(true);
+		
+		mockMvc.perform(MockMvcRequestBuilders.get("/courses/delete?id=1"))
+		.andExpect(MockMvcResultMatchers.status().isFound())
+		.andExpect(MockMvcResultMatchers.model().attribute("mode", "MODE_COURSES"));
+	
+	}
+
 	
 }

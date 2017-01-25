@@ -53,6 +53,23 @@ public class CourseControllerTest extends AbstractTest{
 	}
 
 	
-
+	@Test
+	public void test_getAllCourses() throws Exception {
+		
+		List<Course> courses = new ArrayList<Course>();
+		courses.add(new Course());
+		courses.add(new Course());
+		
+		Mockito.when(courseService.getAllCourses()).thenReturn(courses);
+		
+		mockMvc.perform(MockMvcRequestBuilders.get("/courses"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
+		.andExpect(MockMvcResultMatchers.view().name("courses"))
+		.andExpect(MockMvcResultMatchers.model().attribute("courses", courses))
+		.andExpect(MockMvcResultMatchers.model().attribute("mode", "MODE_COURSES"));
+		
+	}
+	
+	
 	
 }

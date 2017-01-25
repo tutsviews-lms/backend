@@ -125,12 +125,30 @@ public class CourseControllerTest extends AbstractTest{
 				.param("difficulty", "HARD")
 				.param("description", "this is the description"))
 		.andExpect(MockMvcResultMatchers.view().name("courses"))
+		.andExpect(MockMvcResultMatchers.status().isOk())
 		.andExpect(MockMvcResultMatchers.model().hasErrors())
 		.andExpect(MockMvcResultMatchers.model().attribute("mode", "MODE_NEW_COURSE"));
 		
 	}
 	
 	
-
+	@Test
+	public void saveCourse_should_save_course_with_valid_entries() throws Exception{
+		
+		Mockito.when(courseService.createCourse(Mockito.any(Course.class))).thenReturn(new Course());
+		
+		
+		mockMvc.perform(MockMvcRequestBuilders.post("/courses/save")
+				.param("nameCourse", "valid-name")
+				.param("titleCourse", "this is the title")
+				.param("difficulty", "HARD")
+				.param("description", "this is the description"))
+		.andExpect(MockMvcResultMatchers.status().isFound())
+		.andExpect(MockMvcResultMatchers.model().hasNoErrors());
+		
+		Mockito.verify(courseService).createCourse(Mockito.any(Course.class));
+		
+		
+	}
 
 }

@@ -144,7 +144,6 @@ public class ImageControllerTest extends AbstractTest{
 		
 		Mockito.when(imageService.createImage(Mockito.any(Image.class))).thenReturn(new Image());
 		
-		
 		mockMvc.perform(MockMvcRequestBuilders.post("/images/save")
 				.param("nameImage", "valid-entrie")
 				.param("urlImage", "valid-entrie")
@@ -155,7 +154,6 @@ public class ImageControllerTest extends AbstractTest{
 		.andExpect(MockMvcResultMatchers.model().hasNoErrors());
 		
 		Mockito.verify(imageService).createImage(Mockito.any(Image.class));
-		
 		
 	}
 	

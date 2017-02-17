@@ -1,5 +1,11 @@
 package tutsviews.lms.domain.author;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -7,19 +13,21 @@ import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
-
 import tutsviews.lms.domain.course.Course;
 import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.util.AbstractEntity;
+import tutsviews.lms.domain.util.Plan;
+import tutsviews.lms.domain.util.Role;
 
 @Entity
-public class Author extends AbstractEntity {
+public class Author extends AbstractEntity implements UserDetails  {
 
 	
 	private static final long serialVersionUID = 1L;
@@ -46,11 +54,36 @@ public class Author extends AbstractEntity {
 	@NotNull
 	private String tel;
 
+	private boolean enabled;
+
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author", fetch=FetchType.LAZY)
 	private List<Course> courses;
 
 	@OneToOne(cascade = CascadeType.ALL  , fetch=FetchType.LAZY)
 	private Image image;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Plan plan;
+
+	@JoinColumn(columnDefinition = "author_role")
+	@ManyToMany(fetch = FetchType.EAGER)
+	private List<Role> roles;
+
+	public List<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
+	}
+
+	public Plan getPlan() {
+		return plan;
+	}
+
+	public void setPlan(Plan plan) {
+		this.plan = plan;
+	}
 
 	public String getLastName() {
 		return lastName;
@@ -84,8 +117,38 @@ public class Author extends AbstractEntity {
 		this.email = email;
 	}
 
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
+
 	public String getPassword() {
 		return password;
+	}
+
+	@Override
+	public String getUsername() {
+		return null;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return enabled;
 	}
 
 	public void setPassword(String password) {

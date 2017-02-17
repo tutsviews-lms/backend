@@ -1,12 +1,12 @@
 package tutsviews.lms.repository;
 
-import java.sql.Timestamp;  
-import java.util.List;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.sql.Timestamp;
+import java.util.List;
 
 import tutsviews.lms.domain.author.Author;
 
@@ -23,6 +23,8 @@ public interface AuthorRepository extends JpaRepository<Author, Long> {
 	 
 
 	// By FieldName //IS EQUAL NOT
+
+	Author getAuthorByEmail(String email);
 
 	Author getAuthorByFirstName(String firstName);
 

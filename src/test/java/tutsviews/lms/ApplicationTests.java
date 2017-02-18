@@ -11,6 +11,7 @@ import tutsviews.lms.controller.AuthorControllerTest;
 import tutsviews.lms.controller.CourseControllerTest;
 import tutsviews.lms.controller.HomeControllerTest;
 import tutsviews.lms.controller.ImageControllerTest;
+import tutsviews.lms.integration.RepositoriesIntegrationTest;
 import tutsviews.lms.repository.AuthorRepositoryTest;
 import tutsviews.lms.repository.CategoryRepositoryTest;
 import tutsviews.lms.repository.CourseRepositoryTest;
@@ -27,7 +28,7 @@ import tutsviews.lms.service.ImageServiceTest;
 					ImageRepositoryTest.class,AuthorServiceTest.class,ImageServiceTest.class,
 					CourseServiceTest.class,
 					AuthorControllerTest.class,ImageControllerTest.class,CourseControllerTest.class,
-					HomeControllerTest.class})
+					HomeControllerTest.class, RepositoriesIntegrationTest.class})
 public class ApplicationTests { 
  
 	@Test

@@ -7,6 +7,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
+import tutsviews.lms.service.AuthorSecurityService;
+
 /**
  * Created by ALadin Zaier PC IBS on 17/02/2017.
  */
@@ -14,11 +16,15 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    @Autowired
+    AuthorSecurityService authorSecurityService;
+
     private static final String[] PUBLIC_MATCHERS = {
             "/static/**",
             "/css/**",
             "/fonts/**",
             "/js/**",
+            "/**/favicon.ico",
             "/images/**",
             "/",
             "/error/**/*"
@@ -43,8 +49,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
-                .inMemoryAuthentication()
-                .withUser("user").password("password")
-                .roles("USER");
+                .userDetailsService(authorSecurityService);
     }
 }

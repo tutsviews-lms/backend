@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.repository.AuthorRepository;
@@ -13,10 +14,11 @@ import tutsviews.lms.repository.AuthorRepository;
 /**
  * Created by ALadin Zaier PC IBS on 17/02/2017.
  */
-public class UserSecurityService implements UserDetailsService {
+@Service
+public class AuthorSecurityService implements UserDetailsService {
 
     /** The application logger */
-    private static final Logger LOG = LoggerFactory.getLogger(UserSecurityService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AuthorSecurityService.class);
 
     @Autowired
     AuthorRepository authorRepository;

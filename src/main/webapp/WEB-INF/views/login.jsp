@@ -50,7 +50,7 @@
 
                         <div class="form-group">
                             <label for="username">Pseudo : </label>
-                            <input id="username" type="text" class="form-control" name="username">
+                            <input id="username" type="email" class="form-control" name="username">
                         </div>
 
 
@@ -59,6 +59,7 @@
                             <input id="password" type="password" class="form-control" name="password">
                         </div>
 
+                        <input type="hidden" name="_csrf.parameterName" value="_csrf.token"/>
 
                         <div class="form-group">
                             <input id="button" type="submit" class="btn btn-primary" name="Se connecter">

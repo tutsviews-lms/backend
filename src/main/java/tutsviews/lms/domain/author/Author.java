@@ -6,14 +6,16 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -23,6 +25,7 @@ import javax.validation.constraints.NotNull;
 import tutsviews.lms.domain.course.Course;
 import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.util.AbstractEntity;
+import tutsviews.lms.domain.util.Authority;
 import tutsviews.lms.domain.util.Plan;
 import tutsviews.lms.domain.util.Role;
 
@@ -54,20 +57,20 @@ public class Author extends AbstractEntity implements UserDetails  {
 	@NotNull
 	private String tel;
 
-	private boolean enabled;
-
 	@OneToMany(cascade = CascadeType.ALL,mappedBy = "author", fetch=FetchType.LAZY)
 	private List<Course> courses;
 
 	@OneToOne(cascade = CascadeType.ALL  , fetch=FetchType.LAZY)
 	private Image image;
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	private Plan plan;
-
-	@JoinColumn(columnDefinition = "author_role")
+	@JoinTable(name = "author_role")
 	@ManyToMany(fetch = FetchType.EAGER)
 	private List<Role> roles;
+
+	private boolean enabled =true;
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Plan plan;
 
 	public List<Role> getRoles() {
 		return roles;
@@ -119,7 +122,12 @@ public class Author extends AbstractEntity implements UserDetails  {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return null;
+
+		Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+		roles.forEach(ur -> grantedAuthorities.add(new Authority(ur.getName())));
+
+		return grantedAuthorities;
+
 	}
 
 	public String getPassword() {
@@ -128,7 +136,7 @@ public class Author extends AbstractEntity implements UserDetails  {
 
 	@Override
 	public String getUsername() {
-		return null;
+		return email;
 	}
 
 	@Override
@@ -206,12 +214,6 @@ public class Author extends AbstractEntity implements UserDetails  {
 		this.image = image;
 	}
 
-	@Override
-	public String toString() {
-		return "Author [lastName=" + lastName + ", firstName=" + firstName + ", description=" + description + ", email="
-				+ email + ", password=" + password + ", address=" + address + ", tel=" + tel + ", courses=" + courses
-				+ ", image=" + image + "]";
-	}
 
 	
 	

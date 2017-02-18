@@ -1,15 +1,9 @@
 package tutsviews.lms.domain.util;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-
-import tutsviews.lms.domain.author.Author;
 
 /**
  * Created by ALadin Zaier PC IBS on 17/02/2017.
@@ -25,10 +19,6 @@ public class Role implements Serializable{
 
     private String name;
 
-    @JoinColumn(columnDefinition = "author_role")
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<Author> authors;
-
     public Role() {
     }
 
@@ -36,15 +26,6 @@ public class Role implements Serializable{
         this.id=roleEnum.getId();
         this.name=roleEnum.getName();
     }
-
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
-    }
-
     public int getId() {
         return id;
     }

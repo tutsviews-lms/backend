@@ -1,11 +1,12 @@
 package tutsviews.lms.service.impl;
 
-import java.util.List; 
-
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.repository.AuthorRepository;
@@ -14,9 +15,9 @@ import tutsviews.lms.service.AuthorService;
 @Service
 @Transactional
 public class AuthorServiceImpl implements AuthorService { 
-	
-	@Autowired 
-	Logger logger;
+
+	/** The application logger */
+	private static final Logger LOG = LoggerFactory.getLogger(AuthorServiceImpl.class);
 
 	@Autowired
 	AuthorRepository authorRepository;
@@ -33,10 +34,10 @@ public class AuthorServiceImpl implements AuthorService {
 		
         if (authorRepository.findOne((long) id) != null) {
             authorRepository.delete((long) id);
-            logger.info("User ID: " + id + " deleted Entry from Author table.");
+            LOG.info("User ID: " + id + " deleted Entry from Author table.");
             return true;
         } else {
-            logger.error("Error while deleting Entry with id: "+ id + " from Author table.");
+            LOG.error("Error while deleting Entry with id: "+ id + " from Author table.");
             return false;
         }
 		
@@ -45,5 +46,13 @@ public class AuthorServiceImpl implements AuthorService {
 	public Author createAuthor(Author author) {
 		return authorRepository.save(author);
 
+	}
+
+	@Override
+	public Boolean existAuthorWithUserNameOrEmail(String email) {
+
+		if (!(authorRepository.getAuthorByEmail(email) ==null)) { return true; }
+
+		return false;
 	}
 }

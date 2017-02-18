@@ -1,8 +1,8 @@
 package tutsviews.lms.service;
 
-import java.util.List;
-
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 import tutsviews.lms.domain.author.Author;
 
@@ -16,6 +16,8 @@ public interface AuthorService {
 	boolean deleteAuthor(int id) ;
 	
 	Author createAuthor(Author author);
+
+	Boolean existAuthorWithUserNameOrEmail(String email);
 	
 	
 	

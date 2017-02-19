@@ -4,7 +4,7 @@ import javax.persistence.Embeddable;
 
 
 @Embeddable 
-public class Address {
+public class AuthorAddress {
 	
     private String street; 
     
@@ -47,11 +47,11 @@ public class Address {
 		this.zipCode = zipCode;
 	}
 
-	public Address() {
+	public AuthorAddress() {
 		super();
 	}
 
-	public Address(String street, String city, String state, String zipCode) {
+	public AuthorAddress(String street, String city, String state, String zipCode) {
 		super();
 		this.street = street;
 		this.city = city;
@@ -61,7 +61,7 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "Address [street=" + street + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + "]";
+		return "AuthorAddress [street=" + street + ", city=" + city + ", state=" + state + ", zipCode=" + zipCode + "]";
 	}
     
     

@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import tutsviews.lms.domain.enums.RoleType;
+
 /**
  * Created by ALadin Zaier PC IBS on 17/02/2017.
  */
@@ -22,7 +24,7 @@ public class Role implements Serializable{
     public Role() {
     }
 
-    public Role(RoleEnum roleEnum){
+    public Role(RoleType roleEnum){
         this.id=roleEnum.getId();
         this.name=roleEnum.getName();
     }

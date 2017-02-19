@@ -5,6 +5,8 @@ import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import tutsviews.lms.domain.enums.PlanType;
+
 /**
  * Created by ALadin Zaier PC IBS on 17/02/2017.
  */
@@ -28,7 +30,7 @@ public class Plan implements Serializable {
      *  Full Constructor
      * @param planEnum
      */
-    public Plan(PlanEnum planEnum){
+    public Plan(PlanType planEnum){
         this.id = planEnum.getId();
         this.name = planEnum.getNamePlan();
     }

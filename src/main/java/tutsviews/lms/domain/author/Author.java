@@ -16,6 +16,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinTable;
+import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -32,8 +33,6 @@ import tutsviews.lms.domain.util.Role;
 @Entity
 public class Author extends AbstractEntity implements UserDetails  {
 
-	
-	private static final long serialVersionUID = 1L;
 
 	@NotBlank(message="Le Nom est obligatire.")
 	private String lastName;
@@ -41,7 +40,8 @@ public class Author extends AbstractEntity implements UserDetails  {
 	@NotBlank(message="Le prénom est obligatoire.")
 	private String firstName;
 
-	@Column(length = 5000)
+	@Lob
+	@Column(columnDefinition = "LONGTEXT")
 	private String description;
 
 	@Email
@@ -52,7 +52,7 @@ public class Author extends AbstractEntity implements UserDetails  {
 	private String password;
 
 	@Embedded
-	private Address address;
+	private AuthorAddress address;
 
 	@NotNull
 	private String tel;
@@ -71,6 +71,10 @@ public class Author extends AbstractEntity implements UserDetails  {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	private Plan plan;
+
+	public Author() {
+		super();
+	}
 
 	public List<Role> getRoles() {
 		return roles;
@@ -120,54 +124,19 @@ public class Author extends AbstractEntity implements UserDetails  {
 		this.email = email;
 	}
 
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-
-		Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-		roles.forEach(ur -> grantedAuthorities.add(new Authority(ur.getName())));
-
-		return grantedAuthorities;
-
-	}
-
 	public String getPassword() {
 		return password;
-	}
-
-	@Override
-	public String getUsername() {
-		return email;
-	}
-
-	@Override
-	public boolean isAccountNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isAccountNonLocked() {
-		return true;
-	}
-
-	@Override
-	public boolean isCredentialsNonExpired() {
-		return true;
-	}
-
-	@Override
-	public boolean isEnabled() {
-		return enabled;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
-	public Address getAddress() {
+	public AuthorAddress getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(AuthorAddress address) {
 		this.address = address;
 	}
 
@@ -195,12 +164,7 @@ public class Author extends AbstractEntity implements UserDetails  {
 		this.image = image;
 	}
 
-	public Author() { 
-		super();
-	}
-	
-
-	public Author(String lastName, String firstName, String description, String email, String password, Address address,
+	public Author(String lastName, String firstName, String description, String email, String password, AuthorAddress address,
 			String tel, List<Course> courses, Image image) {
 		super();
 		this.lastName = lastName;
@@ -215,16 +179,48 @@ public class Author extends AbstractEntity implements UserDetails  {
 	}
 
 
-	
-	
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
 
-	
-	
+		Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
+		roles.forEach(ur -> grantedAuthorities.add(new Authority(ur.getName())));
 
-	
-	
-	
-	
-	
-	
+		return grantedAuthorities;
+
+	}
+
+	@Override
+	public String getUsername() {
+		return email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return enabled;
+	}
+
+
+
+
+
+
+
+
+
+
 }

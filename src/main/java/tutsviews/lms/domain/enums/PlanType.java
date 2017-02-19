@@ -1,11 +1,11 @@
-package tutsviews.lms.domain.util;
+package tutsviews.lms.domain.enums;
 
 /**
  * Created by ALadin Zaier PC IBS on 17/02/2017.
  */
 
 
-public enum PlanEnum {
+public enum PlanType {
 
     BASIC(1,"Basic"),
     PRO(2,"Pro");
@@ -14,7 +14,7 @@ public enum PlanEnum {
     private final String namePlan;
 
 
-    PlanEnum(int id, String namePlan) {
+    PlanType(int id, String namePlan) {
         this.id = id;
         this.namePlan = namePlan;
     }

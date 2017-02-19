@@ -2,7 +2,7 @@ package tutsviews.lms.utils;
 
 import java.util.Date;
 
-import tutsviews.lms.domain.author.Address;
+import tutsviews.lms.domain.author.AuthorAddress;
 import tutsviews.lms.domain.author.Author;
 
 /**
@@ -21,7 +21,7 @@ public class AuthorUtils {
     public static Author createBasicAuthor(){
 
 
-        Address basicAddress = new Address();
+        AuthorAddress basicAddress = new AuthorAddress();
         basicAddress.setStreet("Place de la comédie");
         basicAddress.setCity("Montpellier");
         basicAddress.setState("France");

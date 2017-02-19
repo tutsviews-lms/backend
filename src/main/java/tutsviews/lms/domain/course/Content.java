@@ -15,7 +15,7 @@ import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.media.Text;
 import tutsviews.lms.domain.media.Video;
 import tutsviews.lms.domain.util.AbstractEntity;
-import tutsviews.lms.domain.util.ContentType;
+import tutsviews.lms.domain.enums.ContentType;
 
 @Entity
 public class Content extends AbstractEntity {

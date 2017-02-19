@@ -1,10 +1,5 @@
 package tutsviews.lms.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -18,10 +13,15 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import tutsviews.lms.AbstractTest;
 import tutsviews.lms.domain.course.Course;
 import tutsviews.lms.service.CourseService;
 import tutsviews.lms.web.controller.CourseController;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 
 public class CourseControllerTest extends AbstractTest{
 	
@@ -121,7 +121,7 @@ public class CourseControllerTest extends AbstractTest{
 		mockMvc.perform(MockMvcRequestBuilders.post("/courses/save")
 				.param("nameCourse", "")
 				.param("titleCourse", "this is the title")
-				.param("difficulty", "HARD")
+				.param("difficulty", "EXPERT")
 				.param("description", "this is the description"))
 		.andExpect(MockMvcResultMatchers.view().name("courses"))
 		.andExpect(MockMvcResultMatchers.status().isOk())
@@ -140,7 +140,7 @@ public class CourseControllerTest extends AbstractTest{
 		mockMvc.perform(MockMvcRequestBuilders.post("/courses/save")
 				.param("nameCourse", "valid-name")
 				.param("titleCourse", "this is the title")
-				.param("difficulty", "HARD")
+				.param("difficulty", "EXPERT")
 				.param("description", "this is the description"))
 		.andExpect(MockMvcResultMatchers.status().isFound())
 		.andExpect(MockMvcResultMatchers.model().hasNoErrors());

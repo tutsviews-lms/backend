@@ -1,5 +1,9 @@
 package tutsviews.lms.domain.course;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,14 +18,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotBlank;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import tutsviews.lms.domain.author.Author;
+import tutsviews.lms.domain.enums.DifficultyType;
 import tutsviews.lms.domain.media.Image;
 import tutsviews.lms.domain.util.AbstractEntity;
-import tutsviews.lms.domain.util.DifficultyType;
 
 @Entity
 public class Course extends AbstractEntity {

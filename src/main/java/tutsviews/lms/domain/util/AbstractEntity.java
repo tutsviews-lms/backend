@@ -1,5 +1,7 @@
 package tutsviews.lms.domain.util;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -10,9 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Version;
 
 @MappedSuperclass
 public abstract class AbstractEntity  implements Serializable  {
@@ -27,13 +27,20 @@ public abstract class AbstractEntity  implements Serializable  {
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(nullable = false,columnDefinition="TIMESTAMP default CURRENT_TIMESTAMP")
 	private Date createdAt;
+
+	@Version
+	private int version;
 	
 
 //	@JsonIgnore
 //	@Temporal(TemporalType.TIMESTAMP)
 //	@Column(nullable = false,columnDefinition="TIMESTAMP default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP")
 //	private Date updatedAt  = new Date();
-	
+
+
+	public AbstractEntity() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
@@ -41,6 +48,14 @@ public abstract class AbstractEntity  implements Serializable  {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 	public Date getCreatedAt() {
@@ -61,9 +76,6 @@ public abstract class AbstractEntity  implements Serializable  {
 //		this.updatedAt = updatedAt;
 //	}
 
-	public AbstractEntity() {
-		super();
-	}
 
 
 	

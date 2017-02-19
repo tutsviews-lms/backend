@@ -11,9 +11,9 @@ import java.util.List;
 import tutsviews.lms.AbstractTest;
 import tutsviews.lms.domain.author.Author;
 import tutsviews.lms.domain.util.Plan;
-import tutsviews.lms.domain.util.PlanEnum;
+import tutsviews.lms.domain.enums.PlanType;
 import tutsviews.lms.domain.util.Role;
-import tutsviews.lms.domain.util.RoleEnum;
+import tutsviews.lms.domain.enums.RoleType;
 import tutsviews.lms.repository.AuthorRepository;
 import tutsviews.lms.repository.PlanRepository;
 import tutsviews.lms.repository.RoleRepository;
@@ -47,9 +47,9 @@ public class RepositoriesIntegrationTest extends AbstractTest{
     @Test
     public void test_create_new_plan(){
 
-        Plan basicPlan = createBasicPlan(PlanEnum.BASIC);
+        Plan basicPlan = createBasicPlan(PlanType.BASIC);
         planRepository.save(basicPlan);
-        Plan retrievedPlan = planRepository.findOne(PlanEnum.BASIC.getId());
+        Plan retrievedPlan = planRepository.findOne(PlanType.BASIC.getId());
         Assert.assertNotNull(retrievedPlan);
 
     }
@@ -57,9 +57,9 @@ public class RepositoriesIntegrationTest extends AbstractTest{
     @Test
     public void test_create_new_role(){
 
-        Role basicRole = createBasicRole(RoleEnum.BASIC);
+        Role basicRole = createBasicRole(RoleType.BASIC);
         roleRepository.save(basicRole);
-        Role retrievedRole = roleRepository.findOne(RoleEnum.BASIC.getId());
+        Role retrievedRole = roleRepository.findOne(RoleType.BASIC.getId());
         Assert.assertNotNull(retrievedRole);
 
     }
@@ -69,13 +69,13 @@ public class RepositoriesIntegrationTest extends AbstractTest{
 
         Author basicAuthor = AuthorUtils.createBasicAuthor();
 
-        Plan plan = new Plan(PlanEnum.BASIC);
+        Plan plan = new Plan(PlanType.BASIC);
         planRepository.save(plan);
 
         basicAuthor.setPlan(plan);
 
 
-        Role role = new Role(RoleEnum.BASIC);
+        Role role = new Role(RoleType.BASIC);
         roleRepository.save(role);
 
         List<Role> roles = new ArrayList<>();
@@ -114,11 +114,11 @@ public class RepositoriesIntegrationTest extends AbstractTest{
 
 /* Private methods */
 
-    private Plan createBasicPlan(PlanEnum planEnum){
+    private Plan createBasicPlan(PlanType planEnum){
         return new Plan(planEnum);
     }
 
-    private Role createBasicRole(RoleEnum roleEnum){
+    private Role createBasicRole(RoleType roleEnum){
         return new Role(roleEnum);
     }
 

@@ -1,9 +1,9 @@
-package tutsviews.lms.domain.util;
+package tutsviews.lms.domain.enums;
 
 /**
  * Created by ALadin Zaier PC IBS on 17/02/2017.
  */
-public enum  RoleEnum {
+public enum RoleType {
 
     BASIC(1,"ROLE_BASIC"),
     PRO(2,"ROLE_PRO"),
@@ -14,7 +14,7 @@ public enum  RoleEnum {
     private final String name;
 
 
-    private RoleEnum(int id, String name){
+    private RoleType(int id, String name){
         this.id = id;
         this.name = name;
     }
